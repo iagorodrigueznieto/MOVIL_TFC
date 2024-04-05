@@ -14,12 +14,15 @@
               android:background="#9D6FEF"
     />
     <EditText android:layout_width="250dp" android:layout_height="wrap_content"
+              android:hint="Nombre de usuario"
               android:layout_marginTop="100sp"
+              android:id="@+id/input_usuario"
               android:layout_marginLeft="80sp"
     />
     <EditText android:layout_width="250dp" android:layout_height="wrap_content"
               android:layout_marginTop="100sp"
               android:layout_marginLeft="80sp"
+              android:hint="Contraseña"
               android:id="@+id/input_contraseña"
     />
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"

@@ -33,8 +33,11 @@ android {
 }
 
 dependencies {
-
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("io.ktor:ktor-client-core:1.6.4")
+    implementation("io.ktor:ktor-client-json:1.6.4")
+    implementation("io.ktor:ktor-client-serialization:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.0")
+    implementation("androidx.core:core-ktx:1.12.0")
     implementation ("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
