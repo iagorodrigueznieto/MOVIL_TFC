@@ -6,7 +6,6 @@ import java.time.LocalDate
 @Serializable
 data class Jugador(
     val id: Int,
-    val edad : Int,
     val nombre : String,
     val apellidos : String,
     val fechaNacimiento : LocalDate,

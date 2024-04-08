@@ -16,13 +16,14 @@ class MainActivity : AppCompatActivity() {
         var login = findViewById<Button>(R.id.login)
         var input_usuario = findViewById<EditText>(R.id.input_usuario)
         var input_contraseña = findViewById<EditText>(R.id.input_contraseña)
-        val db= UsuarioHelper(this,null)
+        val db = UsuarioHelper(this, null)
 
         login.setOnClickListener {
             if (input_contraseña.text.isEmpty() || input_usuario.text.isEmpty()) {
                 Toast.makeText(this, "No se puede dejar ningún campo vacío.", Toast.LENGTH_LONG).show()
             } else {
-
+                var a: Intent = Intent(baseContext, ActivityMenuPrincipal::class.java)
+                startActivity(a)
             }
         }
 

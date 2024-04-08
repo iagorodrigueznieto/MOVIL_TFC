@@ -11,6 +11,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.PRUEBAS_TFG"
+            android:usesCleartextTraffic="true"
             tools:targetApi="31">
         <activity
                 android:name=".MainActivity"
@@ -21,7 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activityClasificacionLiga"
+                  android:exported="false"/>
         <activity android:name=".ActivityRegistrarse"
+                  android:exported="false"/>
+        <activity android:name=".ActivityMenuPrincipal"
                   android:exported="false"/>
     </application>
 
