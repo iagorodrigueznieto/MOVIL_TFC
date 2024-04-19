@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.pruebas_tfg.Model.Jugador
 import com.example.pruebas_tfg.R
 
-class ListAdapter(
+class AdaptadorLista(
     private val context: Context,
     private val jugadores: List<Jugador>
 ) : BaseAdapter() {
@@ -40,7 +39,7 @@ class ListAdapter(
 
         val jugador = jugadores.get(position)
         viewHolder.nombreTextView.text=jugador.nombre
-        viewHolder.edadTextView.text=jugador.apellidos
+        viewHolder.edadTextView.text=Integer.toString(jugador.goles)
         return view
     }
 
