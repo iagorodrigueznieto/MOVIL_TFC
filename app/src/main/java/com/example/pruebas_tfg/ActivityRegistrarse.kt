@@ -15,7 +15,6 @@ class ActivityRegistrarse : AppCompatActivity() {
         val contraseña = findViewById<EditText>(R.id.contraseña)
         val contraseña2 = findViewById<EditText>(R.id.contraseña2)
         val mail = findViewById<EditText>(R.id.mail)
-        val db=UsuarioHelper(this,null)
         val registrarse = findViewById<Button>(R.id.btnRegistro)
 
         registrarse.setOnClickListener{
@@ -27,8 +26,7 @@ class ActivityRegistrarse : AppCompatActivity() {
                 Toast.makeText(baseContext, "Las contraseñas no son iguales, revisa alguna de ellas. ", Toast.LENGTH_LONG).show()
             }
             else{
-                db.addName(nombreUsuario.text.toString(), contraseña.text.toString(), null.toString(), mail.text.toString())
-                Toast.makeText(this, "Usuario insertado con éxito. ", Toast.LENGTH_LONG).show()
+
             }
 
         }

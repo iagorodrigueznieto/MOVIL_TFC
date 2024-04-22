@@ -12,6 +12,13 @@
               android:textColor="@color/white"
               android:textSize="15sp"
               android:padding="13sp"/>
+   <TextView android:layout_width="wrap_content"
+             android:layout_marginTop="20sp"
+             android:layout_marginLeft="300sp"
+             android:layout_height="wrap_content"
+             android:id="@+id/login"/>
+
+
 
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="Clasificación de la Liga"
