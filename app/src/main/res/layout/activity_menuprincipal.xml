@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:text="Menú Principal"
+              android:background="#5D34A5"
+              android:textColor="@color/white"
+              android:textSize="15sp"
+              android:padding="13sp"/>
+   <TextView android:layout_width="wrap_content"
+             android:layout_marginTop="20sp"
+             android:layout_marginLeft="300sp"
+             android:layout_height="wrap_content"
+             android:id="@+id/login"/>
+
+    <ImageView android:layout_width="60sp" android:layout_height="60sp"
+               android:id="@+id/ImagenUsuario"
+               android:layout_marginLeft="320sp"
+               android:layout_marginTop="-20sp"/>
+
+
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Clasificación de la Liga"
+            android:id="@+id/btnLiga"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="50sp"/>
+
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Buscar un equipo"
+            android:id="@+id/btnEquipos"
+            android:layout_marginTop="70sp"
+            android:layout_marginLeft="50sp"/>
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Buscar un Jugador"
+            android:layout_marginTop="70sp"
+            android:layout_marginLeft="50sp"/>
+
+
+
+
+</LinearLayout>
