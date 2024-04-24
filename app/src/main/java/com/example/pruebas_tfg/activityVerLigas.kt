@@ -62,7 +62,10 @@ class activityVerLigas : AppCompatActivity() {
                        val clickTime = System.currentTimeMillis()
                        if (clickTime - lastClickTime < doubleClickTimeDelta) {
                            liga = lista.getItemAtPosition(position) as Liga
-                           val intent = Intent(this@activityVerLigas, ::class.java)
+
+                           val intent = Intent(this@activityVerLigas, ActivityClasificacionLiga::class.java)
+                           intent.putExtra("liga",liga)
+                           startActivity(intent)
                        }
                        lastClickTime = clickTime
                    }
