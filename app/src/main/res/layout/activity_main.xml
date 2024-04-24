@@ -22,6 +22,7 @@
     <EditText android:layout_width="250dp" android:layout_height="wrap_content"
               android:layout_marginTop="100sp"
               android:layout_marginLeft="80sp"
+              android:inputType="textPassword"
               android:hint="Contraseña"
               android:id="@+id/input_contraseña"
     />

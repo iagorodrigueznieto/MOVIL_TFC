@@ -9,7 +9,7 @@ import android.widget.TextView
 import com.example.pruebas_tfg.Model.Jugador
 import com.example.pruebas_tfg.R
 
-class AdaptadorLista(
+class JugadorAdaptadorLista(
     private val context: Context,
     private val jugadores: List<Jugador>
 ) : BaseAdapter() {
