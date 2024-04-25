@@ -48,6 +48,7 @@ class activityVerLigas : AppCompatActivity() {
                                 )
                             )
                         }
+
                         runOnUiThread {
                             val adapter = LigaAdaptadorLista(baseContext, ligas)
                             lista.adapter = adapter

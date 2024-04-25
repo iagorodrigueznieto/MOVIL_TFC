@@ -31,6 +31,8 @@
         </activity>
         <activity android:name=".activity_seleccion_imagen"
                   android:exported="false"/>
+        <activity android:name=".activity_Jugador_Estadistica"
+            android:exported="false"/>
         <activity android:name=".ActivityClasificacionLiga"
                   android:exported="false"/>
         <activity
