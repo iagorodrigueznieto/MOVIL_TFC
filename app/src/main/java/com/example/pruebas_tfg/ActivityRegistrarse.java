@@ -56,7 +56,7 @@ public class ActivityRegistrarse extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                User user=new User(login.getText().toString(), contrasenia.getText().toString(), mail.getText().toString(),2, ruta);
+                User user=new User(login.getText().toString(), mail.getText().toString(),contrasenia.getText().toString(),2, ruta);
                 Gson gson=new Gson();
                 String json=gson.toJson(user);
                 String url="http://192.168.2.211:8080/usuarios";

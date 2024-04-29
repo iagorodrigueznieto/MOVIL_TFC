@@ -1,52 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+              xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:padding="20sp"
+
+    <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="10sp"
               android:text="Registro"
-              android:background="#9D6FEF"
+              android:background="#5D34A5"
               android:textColor="@color/white"
               android:textSize="15sp"/>
-    <EditText android:layout_width="200sp" android:layout_height="wrap_content"
+
+    <EditText
+              android:layout_width="200sp"
+              android:layout_height="wrap_content"
               android:paddingTop="80dp"
               android:hint="Nombre de Usuario"
               android:id="@+id/nombreUsuario"
               android:layout_marginLeft="90sp"/>
 
-    <EditText android:layout_width="200sp" android:layout_height="wrap_content"
+    <EditText
+              android:layout_width="200sp"
+              android:layout_height="wrap_content"
               android:paddingTop="30sp"
               android:layout_marginLeft="90sp"
               android:id="@+id/contraseña"
               android:inputType="textPassword"
               android:hint="Contraseña"/>
-    <EditText android:layout_width="200sp" android:layout_height="wrap_content"
+
+    <EditText
+              android:layout_width="200sp"
+              android:layout_height="wrap_content"
               android:paddingTop="30sp"
               android:id="@+id/contraseña2"
               android:inputType="textPassword"
               android:hint="Repita su Contraseña"
               android:layout_marginLeft="90sp"/>
-    <EditText android:layout_width="200sp" android:layout_height="wrap_content"
+
+    <EditText
+              android:layout_width="200sp"
+              android:layout_height="wrap_content"
               android:paddingTop="20sp"
               android:layout_marginLeft="90sp"
               android:id="@+id/mail"
               android:hint="Correo Electrónico"/>
-    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:paddingTop="30sp"
-    android:paddingLeft="30sp">
-        <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="30sp"
+            android:paddingLeft="30sp">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/selImagen"
                 android:text="Selecciona una imagen"/>
-        <ImageView android:layout_width="60sp" android:layout_height="60sp"
-                   android:layout_marginLeft="40sp"
-                   android:id="@+id/imagen"
-                   />
+
+        <ImageView
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+                android:layout_marginLeft="40sp"
+                android:id="@+id/imagen" />
+
     </LinearLayout>
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30sp"
             android:text="Registro"
-
             android:layout_marginLeft="150sp"
-                android:id="@+id/btnRegistro"/>
+            android:id="@+id/btnRegistro"/>
+
 </LinearLayout>

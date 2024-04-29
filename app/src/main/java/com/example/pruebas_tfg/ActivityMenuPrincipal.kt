@@ -39,7 +39,12 @@ class ActivityMenuPrincipal : AppCompatActivity() {
             var menu = Intent(baseContext, activityVerLigas::class.java)
             startActivity(menu)
         }
-        var BuscarJugador= findViewById<Button>(R.id.btnEquipos)
+        val equipos = findViewById<Button>(R.id.btnEquipos)
+        equipos.setOnClickListener {
+            val a = Intent(baseContext, activity_equipos_Estadisticas::class.java)
+            startActivity(a)
+        }
+        var BuscarJugador= findViewById<Button>(R.id.btnJugadores)
         BuscarJugador.setOnClickListener {
             val a = Intent(baseContext, activity_Jugador_Estadistica::class.java)
             startActivity(a)

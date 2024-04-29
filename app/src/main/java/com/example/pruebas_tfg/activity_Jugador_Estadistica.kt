@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebas_tfg.Adapter.JugadorAdaptadorLista
@@ -25,46 +27,35 @@ class activity_Jugador_Estadistica : AppCompatActivity() {
         val buscarJugadores : EditText = findViewById(R.id.barraBuscarJugadores)
         val lista : ListView = findViewById(R.id.jugadores)
         val client=OkHttpClient()
+        val button = findViewById<Button>(R.id.buscar)
+        button.setOnClickListener {
+            val request = Request.Builder()
+                .url("http://localhost:8080/jugadores")
+                .build()
+            client.newCall(request).enqueue(object : Callback{
+                override fun onFailure(call: Call, e: IOException) {
 
-        buscarJugadores.addTextChangedListener(object: TextWatcher{
+                }
 
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                override fun onResponse(call: Call, response: Response) {
+                    val body=response.body
+                    val jsonString = body?.toString()
+                    val gson=Gson()
 
-            }
+                    val jugadores=gson.fromJson(jsonString,Array<Jugador>::class.java).toList()
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    runOnUiThread {
 
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-                val request = Request.Builder()
-                    .url("http://192.168.2.211:8080/buscar?nombre="+buscarJugadores.text)
-                    .build()
-                client.newCall(request).enqueue(object : Callback{
-                    override fun onFailure(call: Call, e: IOException) {
-
+                        val adapter = JugadorAdaptadorLista(baseContext, jugadores)
+                        lista.adapter = adapter
 
                     }
+                }
+            })
+        }
 
-                    override fun onResponse(call: Call, response: Response) {
-                        if(response.isSuccessful){
-                            val body=response.body
-                            val jsonString = body?.string()
-                            val gson=Gson()
-                            val jugadores=gson.fromJson(jsonString, Array<Jugador>::class.java).toList()
 
-                            runOnUiThread {
-                                val adapter =JugadorAdaptadorLista(baseContext, jugadores)
-                                lista.adapter=adapter
-                            }
 
-                        }
-                    }
-
-                })
-            }
-
-        })
 
 
     }

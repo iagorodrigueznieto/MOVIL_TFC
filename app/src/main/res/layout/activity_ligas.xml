@@ -4,12 +4,18 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Clasificacion"
+              android:textSize="15sp"
+              android:background="#5D34A5"
+              android:textColor="@color/white"
+              android:padding="10sp"/>
 
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-              android:text="Clasificacion" android:textSize="15sp"
-              android:background="#784EC3" android:textColor="@color/white"
-              android:padding="8sp"/>
-
-    <ListView android:layout_width="match_parent" android:layout_height="match_parent"
+    <ListView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:id="@+id/listaJugadores"/>
+
 </LinearLayout>
