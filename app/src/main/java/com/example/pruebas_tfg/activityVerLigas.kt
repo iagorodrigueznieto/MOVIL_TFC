@@ -74,7 +74,7 @@ class activityVerLigas : AppCompatActivity() {
 
 
                 } else {
-                    println("No se pudo completar la solicitud")
+
                 }
             }
         })
