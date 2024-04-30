@@ -7,13 +7,12 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.pruebas_tfg.BBDD.UsuarioHelper
 import com.example.pruebas_tfg.Model.User
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
 
-class MainActivity : AppCompatActivity() {
+class activity_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -51,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                                     "Usuario encontrado, entrando en la aplicación...",
                                     Toast.LENGTH_LONG
                                 ).show()
-                                var a = Intent(applicationContext, ActivityMenuPrincipal::class.java)
+                                var a = Intent(applicationContext, activity_menu_principal::class.java)
                                 a.putExtra("usuario",user)
                                 startActivity(a)
                             }
@@ -64,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         registrarse.setOnClickListener {
-            var a = Intent(baseContext, ActivityRegistrarse::class.java)
+            var a = Intent(baseContext, activity_registrarse::class.java)
             startActivity(a)
         }
     }

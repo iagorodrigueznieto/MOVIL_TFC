@@ -5,14 +5,13 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebas_tfg.Adapter.EquiposAdapterLiga
-import com.example.pruebas_tfg.Model.Equipo
 import com.example.pruebas_tfg.Model.Liga
 import com.example.pruebas_tfg.dto.ClasificacionInputDto
 import com.google.gson.Gson
 import okhttp3.*
 import java.io.IOException
 
-class ActivityClasificacionLiga : AppCompatActivity() {
+class activity_Clasificacion_Liga : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

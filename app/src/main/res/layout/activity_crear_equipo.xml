@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear un equipo"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:background="#673AB7"
+            android:textColor="@color/white"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            android:layout_marginTop="30sp"
+            android:layout_marginLeft="120sp"
+            android:text="Crea a un equipo"/>
+
+    <EditText
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            android:layout_marginLeft="50sp"
+            android:hint="Nombre del equipo"
+            android:id="@+id/nombreEquipo"/>
+
+    <EditText
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:id="@+id/editCiudad"
+            android:layout_marginTop="40sp"
+            android:hint="Ciudad"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entrenador: "
+            android:textSize="18sp"
+            android:textStyle="italic|bold"
+            android:layout_marginLeft="50sp"
+            android:layout_marginTop="30sp"/>
+
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eleccionEntrenador"
+            android:layout_marginTop="20sp"
+            android:layout_marginStart="50sp"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear"
+            android:id="@+id/btnCrear"
+            android:layout_marginTop="100sp"
+            android:layout_marginLeft="160sp"/>
+
+</LinearLayout>

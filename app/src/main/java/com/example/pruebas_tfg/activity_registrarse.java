@@ -13,21 +13,17 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.pruebas_tfg.Model.User;
 import com.google.gson.Gson;
-import io.ktor.client.request.HttpRequest;
-import io.ktor.client.request.HttpRequestPipeline;
+
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 
-public class ActivityRegistrarse extends AppCompatActivity {
+public class activity_registrarse extends AppCompatActivity {
     private static final int CODIGO_ACTIVIDAD_SECUNDARIA = 1;
     String ruta=null;
 
@@ -90,7 +86,7 @@ public class ActivityRegistrarse extends AppCompatActivity {
                     }
                 });
 
-                Intent a=new Intent(getBaseContext(), MainActivity.class);
+                Intent a=new Intent(getBaseContext(), activity_login.class);
                 startActivity(a);
 
 

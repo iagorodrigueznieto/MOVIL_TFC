@@ -13,7 +13,7 @@ import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
 
-class activityVerLigas : AppCompatActivity() {
+class activity_ver_ligas : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +64,7 @@ class activityVerLigas : AppCompatActivity() {
                        if (clickTime - lastClickTime < doubleClickTimeDelta) {
                            liga = lista.getItemAtPosition(position) as Liga
 
-                           val intent = Intent(this@activityVerLigas, ActivityClasificacionLiga::class.java)
+                           val intent = Intent(this@activity_ver_ligas, activity_Clasificacion_Liga::class.java)
                            intent.putExtra("liga",liga)
                            startActivity(intent)
                        }

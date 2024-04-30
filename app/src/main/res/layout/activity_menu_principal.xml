@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/download"
+            android:src="@drawable/fondo"
             android:layout_centerInParent="true" />
     <TextView
             android:layout_width="match_parent"
@@ -24,7 +24,6 @@
             android:padding="10sp"/>
 
    <TextView android:layout_width="wrap_content"
-           android:text="Prueba"
            android:textColor="@color/white"
            android:layout_marginLeft="280sp"
            android:layout_marginTop="30sp"
@@ -38,7 +37,7 @@
             android:id="@+id/ImagenUsuario"
             android:layout_below="@+id/titulo"
             android:layout_marginStart="340sp"
-            android:layout_marginTop="30sp" />
+            android:layout_marginTop="49dp" />
 
     <Button
             android:layout_width="wrap_content"
@@ -66,5 +65,13 @@
             android:layout_marginTop="70sp"
             android:layout_marginLeft="50sp" />
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crear una liga: "
+            android:layout_below="@+id/btnJugadores"
+            android:layout_marginTop="70sp"
+            android:layout_marginLeft="50sp"
+            android:id="@+id/btnCrearLigas" />
 
 </RelativeLayout>

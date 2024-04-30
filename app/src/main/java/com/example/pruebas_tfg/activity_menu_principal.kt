@@ -7,24 +7,34 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.pruebas_tfg.Model.User
 import java.io.File
 import java.io.FileInputStream
 
-class ActivityMenuPrincipal : AppCompatActivity() {
+class activity_menu_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menuprincipal)
+        setContentView(R.layout.activity_menu_principal)
         val intent = intent
         val imagen: ImageView = findViewById(R.id.ImagenUsuario)
         val usuario: User? = intent.getSerializableExtra("usuario") as? User
         val login = findViewById<TextView>(R.id.login)
+        val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
         if (usuario != null) {
-            try {
+            if (usuario.cod_Rol!=1){
+                btnCrearLiga.isVisible=false
+            }
+        }
+        if (usuario != null) {
 
-                val file : File = File(usuario.imagen)
-                val fi=FileInputStream(file)
-                imagen.setImageBitmap(BitmapFactory.decodeStream(fi))
+            try {
+                if (usuario.imagen.isEmpty()){
+                    val file : File = File(usuario.imagen)
+                    val fi=FileInputStream(file)
+                    imagen.setImageBitmap(BitmapFactory.decodeStream(fi))
+                }
+
                 login.setText(usuario.login)
 
 
@@ -36,7 +46,7 @@ class ActivityMenuPrincipal : AppCompatActivity() {
         }
         var clasificacion = findViewById<Button>(R.id.btnLiga)
         clasificacion.setOnClickListener {
-            var menu = Intent(baseContext, activityVerLigas::class.java)
+            var menu = Intent(baseContext, activity_ver_ligas::class.java)
             startActivity(menu)
         }
         val equipos = findViewById<Button>(R.id.btnEquipos)

@@ -21,7 +21,7 @@
                 android:resource="@xml/network_security_config"/>
 
         <activity
-                android:name=".MainActivity"
+                android:name=".activity_login"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -33,16 +33,16 @@
                   android:exported="false"/>
         <activity android:name=".activity_Jugador_Estadistica"
             android:exported="false"/>
-        <activity android:name=".ActivityClasificacionLiga"
+        <activity android:name=".activity_Clasificacion_Liga"
                   android:exported="false"/>
         <activity
-                android:name=".activityVerLigas"
+                android:name=".activity_ver_ligas"
                 android:exported="false"/>
         <activity
-                android:name=".ActivityRegistrarse"
+                android:name=".activity_registrarse"
                 android:exported="false"/>
         <activity
-                android:name=".ActivityMenuPrincipal"
+                android:name=".activity_menu_principal"
                 android:exported="false"/>
     </application>
 
