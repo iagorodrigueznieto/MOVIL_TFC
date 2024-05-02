@@ -47,8 +47,6 @@ public class activity_registrarse extends AppCompatActivity {
 
 
         registrarse.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick(View v) {
 

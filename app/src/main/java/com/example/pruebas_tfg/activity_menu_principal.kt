@@ -21,6 +21,7 @@ class activity_menu_principal : AppCompatActivity() {
         val usuario: User? = intent.getSerializableExtra("usuario") as? User
         val login = findViewById<TextView>(R.id.login)
         val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
+        val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
         if (usuario != null) {
             if (usuario.cod_Rol!=1){
                 btnCrearLiga.isVisible=false
@@ -57,6 +58,11 @@ class activity_menu_principal : AppCompatActivity() {
         var BuscarJugador= findViewById<Button>(R.id.btnJugadores)
         BuscarJugador.setOnClickListener {
             val a = Intent(baseContext, activity_Jugador_Estadistica::class.java)
+            startActivity(a)
+        }
+
+        crearEquipo.setOnClickListener {
+            val a= Intent(baseContext, activity_crear_equipo::class.java)
             startActivity(a)
         }
 

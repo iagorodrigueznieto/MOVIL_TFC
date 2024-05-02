@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp"
+            android:textSize="15sp"
+            android:text="Modifica un jugador"
+            android:textColor="@color/white"
+            android:background="#673AB7"/>
+
+    <EditText
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/nombreJugador"
+            android:layout_marginTop="50sp"
+            android:layout_marginLeft="50sp"
+            android:hint="Nombre del Jugador"/>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70sp"
+            android:layout_marginLeft="10sp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarjetas amarillas: " />
+
+        <EditText
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:inputType="number"
+                android:id="@+id/tarjetas_amarillas"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarjetas Rojas: "
+                android:layout_marginLeft="10sp" />
+
+        <EditText
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:inputType="number"
+                android:id="@+id/Tarjetas_Rojas"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Goles: "
+                android:layout_marginLeft="85sp"/>
+
+        <EditText
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:inputType="number"
+                android:id="@+id/Goles" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asistencias: "
+                android:layout_marginLeft="25sp"/>
+
+        <EditText
+                android:layout_width="60sp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12sp"
+                android:inputType="number"
+                android:id="@+id/asistencias"/>
+    </LinearLayout>
+
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            android:layout_marginLeft="130sp"
+            android:id="@+id/spinnerEquipo"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCrearJugador"
+            android:layout_marginTop="80sp"
+            android:layout_marginLeft="115sp"
+            android:text="Modifica el jugador"/>
+
+</LinearLayout>

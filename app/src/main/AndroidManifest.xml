@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET">
-    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
             android:networkSecurityConfig="@xml/network_security_config"
             android:allowBackup="true"
@@ -18,32 +17,48 @@
             tools:targetApi="31">
         <meta-data
                 android:name="com.google.android.actions"
-                android:resource="@xml/network_security_config"/>
+                android:resource="@xml/network_security_config" />
 
         <activity
                 android:name=".activity_login"
                 android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_seleccion_imagen"
-                  android:exported="false"/>
-        <activity android:name=".activity_Jugador_Estadistica"
-            android:exported="false"/>
-        <activity android:name=".activity_Clasificacion_Liga"
-                  android:exported="false"/>
+        <activity
+                android:name=".activity_seleccion_imagen"
+                android:exported="false" />
+        <activity
+                android:name=".activity_Jugador_Estadistica"
+                android:exported="false" />
+        <activity
+                android:name=".activity_Clasificacion_Liga"
+                android:exported="false" />
         <activity
                 android:name=".activity_ver_ligas"
-                android:exported="false"/>
+                android:exported="false" />
         <activity
                 android:name=".activity_registrarse"
-                android:exported="false"/>
+                android:exported="false" />
         <activity
                 android:name=".activity_menu_principal"
-                android:exported="false"/>
+                android:exported="false" />
+        <activity
+                android:name=".activity_crear_equipo"
+                android:exported="false" />
+        <activity
+                android:name=".activity_crear_jugador"
+                android:exported="false" />
+        <activity
+                android:name=".activity_modificar_equipo"
+                android:exported="false" />
+        <activity
+                android:name=".activity_modificar_jugador"
+                android:exported="true" />
+
     </application>
 
 </manifest>
