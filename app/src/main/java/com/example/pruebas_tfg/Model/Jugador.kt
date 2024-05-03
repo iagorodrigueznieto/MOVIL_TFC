@@ -17,8 +17,4 @@ import java.time.LocalDate
     val codPosicion: Int
 ) : Serializable {
 
-   constructor( ) : this(
-
-   )
-
  }
