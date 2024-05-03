@@ -32,7 +32,7 @@
                 android:name=".activity_seleccion_imagen"
                 android:exported="false" />
         <activity
-                android:name=".activity_Jugador_Estadistica"
+                android:name=".activity_buscar_jugadores"
                 android:exported="false" />
         <activity
                 android:name=".activity_Clasificacion_Liga"
@@ -58,6 +58,10 @@
         <activity
                 android:name=".activity_modificar_jugador"
                 android:exported="true" />
+        <activity android:name=".activity_jugador_estadisticas"
+            android:exported="true"/>
+        <activity android:name=".activity_buscar_equipos"
+            android:exported="false"/>
 
     </application>
 

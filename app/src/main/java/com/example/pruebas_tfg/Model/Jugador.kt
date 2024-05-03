@@ -1,10 +1,9 @@
 package com.example.pruebas_tfg.Model
 
-import kotlinx.serialization.Serializable
+import java.io.Serializable
 import java.time.LocalDate
 
-@Serializable
-data class Jugador(
+ class Jugador(
     val id: Int,
     val nombre: String,
     val fechaNacimiento: LocalDate,
@@ -16,7 +15,10 @@ data class Jugador(
     val asistencias: Int,
     val imagen: String,
     val codPosicion: Int
-) {
+) : Serializable {
 
+   constructor( ) : this(
 
-}
+   )
+
+ }

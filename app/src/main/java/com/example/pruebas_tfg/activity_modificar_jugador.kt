@@ -9,7 +9,6 @@ class activity_modificar_jugador : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_modificar_jugador)
 
     }
 

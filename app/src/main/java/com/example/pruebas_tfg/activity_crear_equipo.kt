@@ -41,7 +41,6 @@ class activity_crear_equipo : AppCompatActivity() {
         val btnCrearEntrenador: Button = findViewById(R.id.btnCrearEntrenador)
         btnCrearEntrenador.isVisible = false
         btnCrearEntrenador.isClickable = false
-        val id = 100
 
         val request = Request.Builder().url("http://192.168.2.211:8080/entrenadores/libres").build()
 

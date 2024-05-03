@@ -30,7 +30,7 @@ class activity_menu_principal : AppCompatActivity() {
         if (usuario != null) {
 
             try {
-                if (usuario.imagen.isEmpty()){
+                if (!usuario.imagen.isEmpty()){
                     val file : File = File(usuario.imagen)
                     val fi=FileInputStream(file)
                     imagen.setImageBitmap(BitmapFactory.decodeStream(fi))
@@ -52,12 +52,12 @@ class activity_menu_principal : AppCompatActivity() {
         }
         val equipos = findViewById<Button>(R.id.btnEquipos)
         equipos.setOnClickListener {
-            val a = Intent(baseContext, activity_equipos_Estadisticas::class.java)
+            val a = Intent(baseContext, activity_buscar_equipos::class.java)
             startActivity(a)
         }
         var BuscarJugador= findViewById<Button>(R.id.btnJugadores)
         BuscarJugador.setOnClickListener {
-            val a = Intent(baseContext, activity_Jugador_Estadistica::class.java)
+            val a = Intent(baseContext, activity_buscar_jugadores::class.java)
             startActivity(a)
         }
 
