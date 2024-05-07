@@ -15,7 +15,7 @@ import java.io.IOException
 class activity_login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         var registrarse = findViewById<Button>(R.id.registrarse)
         var login = findViewById<Button>(R.id.login)
         var input_usuario = findViewById<EditText>(R.id.input_usuario)

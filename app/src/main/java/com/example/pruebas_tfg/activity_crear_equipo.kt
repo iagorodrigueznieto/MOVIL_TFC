@@ -39,6 +39,7 @@ class activity_crear_equipo : AppCompatActivity() {
         val client = OkHttpClient()
         var entrenadorSeleccionado: Entrenador? = null
         val btnCrearEntrenador: Button = findViewById(R.id.btnCrearEntrenador)
+        val presidente : EditText = findViewById(R.id.presidente)
         btnCrearEntrenador.isVisible = false
         btnCrearEntrenador.isClickable = false
 
@@ -98,7 +99,7 @@ class activity_crear_equipo : AppCompatActivity() {
                 val equipo = entrenadorSeleccionado?.let { it1 ->
                     Equipo(
                         nombreEquipo.text.toString(), ciudad.text.toString(),
-                        it1.id, null
+                        it1.id, null,presidente.text.toString()
                     )
                 }
 

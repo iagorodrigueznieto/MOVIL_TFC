@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline3"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            android:id="@+id/nombreJugador"
+            android:hint="Nombre del Jugador"
+            app:layout_constraintTop_toBottomOf="@+id/guideline12"/>
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="220sp"
+            app:layout_constraintStart_toEndOf="@id/medio"
+            android:layout_marginLeft="-50sp"
+            android:id="@+id/SpinnerEquipo"
+            />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modificar el jugador"
+            android:id="@+id/btnmodificarJugador"
+            app:layout_constraintStart_toEndOf="@id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="280sp"
+            android:layout_marginLeft="-85sp"/>
+
+
+
+    <EditText
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/goles"
+            app:layout_constraintEnd_toStartOf="@+id/medio"
+            android:layout_marginTop="80sp"
+            android:layout_marginRight="5sp"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"/>
+
+    <EditText
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/tarjetasAmarillas"
+            app:layout_constraintEnd_toStartOf="@+id/medio"
+            android:layout_marginTop="140sp"
+            android:layout_marginRight="5sp"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"/>
+    <EditText
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="80sp"
+            android:layout_marginLeft="95sp"
+            android:inputType="number"
+            android:id="@+id/asistencias"/>
+    <EditText
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="140sp"
+            android:layout_marginLeft="95sp"
+            android:inputType="number"
+            android:id="@+id/tarjetasRojas"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/medio"
+            android:layout_marginTop="160sp"
+            android:layout_marginRight="60sp"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:text="Tarjetas Amarillas:"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="160sp"
+            android:text="Tarjetas Rojas:"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/medio"
+            android:layout_marginTop="100sp"
+            android:layout_marginRight="60sp"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:text="Goles:"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="100sp"
+            android:text="Asistencias:"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline2"
+            app:layout_constraintGuide_percent="0.3"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline3"
+            app:layout_constraintGuide_percent="0.7"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/medio"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline12"
+            app:layout_constraintGuide_percent="0.1"
+            android:orientation="horizontal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

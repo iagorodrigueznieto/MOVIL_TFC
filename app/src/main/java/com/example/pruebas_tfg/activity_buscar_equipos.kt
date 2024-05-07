@@ -69,6 +69,7 @@ class activity_buscar_equipos: AppCompatActivity() {
                                 val ciudad = equipoJson.getString("ciudad")
                                 val idEntrenador = equipoJson.getInt("idEntrenador")
                                 val imagen = equipoJson.getString("imagen")
+                                val presidente = equipoJson.getString("presidente")
 
                                 jugadores.add(
                                     Equipo(
@@ -76,7 +77,8 @@ class activity_buscar_equipos: AppCompatActivity() {
                                         nombreEquipo,
                                         ciudad,
                                         idEntrenador,
-                                        imagen
+                                        imagen,
+                                        presidente
                                     )
                                 )
                                 runOnUiThread {
@@ -99,6 +101,9 @@ class activity_buscar_equipos: AppCompatActivity() {
             val clickTime = System.currentTimeMillis()
             if (clickTime - lastClickTime < doubleClickTimeDelta) {
                 itemSeleccionado= lista.getItemAtPosition(position) as Equipo
+                val intent = Intent(baseContext, activity_info_equipo::class.java)
+                intent.putExtra("equipo",itemSeleccionado)
+                startActivity(intent)
             }
             lastClickTime = clickTime
         }

@@ -82,11 +82,6 @@ class activity_crear_jugador : AppCompatActivity(){
         })
         btn.setOnClickListener {
             val gson = Gson()
-            val jugador = itemSeleccionado.let { it1 ->
-                Jugador(
-
-                )
-            }
         }
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{

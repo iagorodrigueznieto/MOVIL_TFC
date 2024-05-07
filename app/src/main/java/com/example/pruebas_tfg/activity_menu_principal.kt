@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -21,7 +22,14 @@ class activity_menu_principal : AppCompatActivity() {
         val usuario: User? = intent.getSerializableExtra("usuario") as? User
         val login = findViewById<TextView>(R.id.login)
         val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
+        val equipos = findViewById<Button>(R.id.btnEquipos)
+        var clasificacion = findViewById<Button>(R.id.btnLiga)
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
+        val switch : Switch = findViewById(R.id.switch2)
+        if(switch.isActivated){
+            btnCrearLiga.setText( "Crea unha Liga")
+            clasificacion.setText ("Clasificacion da liga")
+        }
         if (usuario != null) {
             if (usuario.cod_Rol!=1){
                 btnCrearLiga.isVisible=false
@@ -45,12 +53,11 @@ class activity_menu_principal : AppCompatActivity() {
 
 
         }
-        var clasificacion = findViewById<Button>(R.id.btnLiga)
         clasificacion.setOnClickListener {
             var menu = Intent(baseContext, activity_ver_ligas::class.java)
             startActivity(menu)
         }
-        val equipos = findViewById<Button>(R.id.btnEquipos)
+
         equipos.setOnClickListener {
             val a = Intent(baseContext, activity_buscar_equipos::class.java)
             startActivity(a)

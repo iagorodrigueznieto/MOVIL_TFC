@@ -1,12 +1,15 @@
 package com.example.pruebas_tfg.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.lang.annotation.Annotation;
-
-import kotlinx.serialization.KSerializer;
-import kotlinx.serialization.Serializable;
+import java.time.LocalDate;
 
 
-public class Equipo implements Serializable {
+public class Equipo implements java.io.Serializable {
     private Integer id;
     private String nombreEquipo;
 
@@ -15,6 +18,11 @@ public class Equipo implements Serializable {
     private Integer idEntrenador;
 
     private String imagen;
+
+
+
+    private String presidente;
+
 
     public Equipo(String nombre, String ciudad, Integer idEntrenador, String imagen) {
         this.nombreEquipo = nombre;
@@ -29,6 +37,14 @@ public class Equipo implements Serializable {
         this.ciudad = ciudad;
         this.idEntrenador = idEntrenador;
         this.imagen = imagen;
+    }
+
+    public Equipo(String nombreEquipo, String ciudad, Integer idEntrenador, String imagen, String presidente) {
+        this.nombreEquipo = nombreEquipo;
+        this.ciudad = ciudad;
+        this.idEntrenador = idEntrenador;
+        this.imagen = imagen;
+        this.presidente = presidente;
     }
 
     public Integer getId() {
@@ -71,6 +87,14 @@ public class Equipo implements Serializable {
         this.imagen = imagen;
     }
 
+    public Equipo(Integer id, String nombreEquipo, String ciudad, Integer idEntrenador, String imagen, String presidente) {
+        this.id = id;
+        this.nombreEquipo = nombreEquipo;
+        this.ciudad = ciudad;
+        this.idEntrenador = idEntrenador;
+        this.imagen = imagen;
+        this.presidente = presidente;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -87,13 +111,13 @@ public class Equipo implements Serializable {
         return null;
     }
 
-    @Override
-    public Class<? extends Annotation> annotationType() {
-        return null;
+    public String getPresidente() {
+        return presidente;
     }
 
-    @Override
-    public Class<? extends KSerializer<?>> with() {
-        return null;
+    public void setPresidente(String presidente) {
+        this.presidente = presidente;
     }
+
+
 }

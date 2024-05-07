@@ -38,6 +38,13 @@
             android:id="@+id/editCiudad"
             android:layout_marginTop="40sp"
             android:hint="Ciudad"/>
+    <EditText
+            android:layout_width="300sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50sp"
+            android:layout_marginTop="40sp"
+            android:hint="Presidente"
+            android:id="@+id/presidente"/>
 
     <TextView
             android:layout_width="wrap_content"

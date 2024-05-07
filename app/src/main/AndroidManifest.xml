@@ -62,7 +62,8 @@
             android:exported="true"/>
         <activity android:name=".activity_buscar_equipos"
             android:exported="false"/>
-
+        <activity android:name=".activity_info_equipo"
+                android:exported="false"/>
     </application>
 
 </manifest>

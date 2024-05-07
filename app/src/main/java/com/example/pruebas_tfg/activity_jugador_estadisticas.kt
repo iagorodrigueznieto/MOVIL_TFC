@@ -1,5 +1,6 @@
 package com.example.pruebas_tfg
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -81,7 +82,9 @@ class activity_jugador_estadisticas : AppCompatActivity() {
             })
         }
         btnModificar.setOnClickListener {
-
+            val intent = Intent(baseContext, activity_modificar_jugador::class.java)
+            intent.putExtra("jugador",jugador)
+            startActivity(intent)
         }
 
     }

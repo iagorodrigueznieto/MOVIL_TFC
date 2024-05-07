@@ -31,7 +31,6 @@ class activity_buscar_jugadores : AppCompatActivity() {
         val lista : ListView = findViewById(R.id.jugadores)
         var itemSeleccionado : Jugador? = null
         val client=OkHttpClient()
-        val button = findViewById<Button>(R.id.buscar)
 
         buscarJugadores.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

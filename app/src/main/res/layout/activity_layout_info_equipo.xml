@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5D34A5"
+            android:textColor="@color/white"
+            android:text="Info Equipo"
+            android:padding="10sp"
+            app:layout_constraintDimensionRatio="1:1" />
+
+
+    <ImageView
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            app:layout_constraintTop_toTopOf="@+id/horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/guideline"
+            android:src="@drawable/icono_equipo" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prueba Nombre de Equipo"
+            android:id="@+id/nombreEquipo"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/vertical"
+            app:layout_constraintTop_toTopOf="@id/horizontal"
+            android:layout_marginTop="12dp" />
+
+    <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="Prueba nombre"
+            android:textSize="20sp"
+            android:layout_marginLeft="85sp"
+            app:layout_constraintTop_toTopOf="@+id/horizontal2"
+            app:layout_constraintStart_toStartOf="@id/vertical4"
+            android:id="@+id/ciudad" />
+
+    <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="Prueba entrenador"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@+id/horizontal2"
+            app:layout_constraintStart_toStartOf="@id/vertical4"
+            android:id="@+id/entrenador"
+            android:layout_marginLeft="85sp"
+            android:layout_marginTop="60dp" />
+
+    <TextView
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:text="Prueba presidente"
+            app:layout_constraintTop_toTopOf="@+id/horizontal2"
+            app:layout_constraintStart_toStartOf="@id/vertical4"
+            android:id="@+id/presidente"
+            android:textSize="20sp"
+            android:layout_marginLeft="85sp"
+            android:layout_marginTop="120dp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ciudad: "
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/vertical2"
+            app:layout_constraintTop_toTopOf="@id/horizontal2"
+            tools:layout_editor_absoluteY="188dp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Entrenador: "
+            app:layout_constraintStart_toStartOf="@id/vertical2"
+            app:layout_constraintTop_toTopOf="@id/horizontal2"
+            android:layout_marginTop="60sp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Presidente: "
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@id/vertical2"
+            app:layout_constraintTop_toTopOf="@id/horizontal2"
+            android:layout_marginTop="120dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            app:layout_constraintGuide_percent="0.25"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontal"
+            app:layout_constraintGuide_percent="0.10"
+            android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontal2"
+            app:layout_constraintGuide_percent="0.25"
+            android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vertical"
+            app:layout_constraintGuide_percent="0.30"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vertical2"
+            app:layout_constraintGuide_percent="0.20"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vertical3"
+            app:layout_constraintGuide_percent="0.20"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vertical4"
+            app:layout_constraintGuide_percent="0.30"
+            android:orientation="vertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/vertical5"
+            app:layout_constraintGuide_percent="0.50"
+            android:orientation="vertical" />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modificar Equipo"
+            app:layout_constraintTop_toTopOf="@id/horizontal4"
+            app:layout_constraintStart_toStartOf="@+id/vertical5"
+            android:id="@+id/btnModificarEquipo"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Equipo"
+            app:layout_constraintTop_toTopOf="@id/horizontal4"
+            app:layout_constraintEnd_toEndOf="@id/vertical5"
+            android:id="@+id/btnEliminarEquipo"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontal4"
+            app:layout_constraintGuide_percent="0.55"
+            android:orientation="horizontal" />
+</androidx.constraintlayout.widget.ConstraintLayout>

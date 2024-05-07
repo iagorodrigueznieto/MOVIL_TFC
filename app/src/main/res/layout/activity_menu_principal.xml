@@ -108,8 +108,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnModificarJugador"
-        android:layout_marginLeft="300sp"
+        android:layout_marginLeft="240sp"
         android:layout_marginTop="50sp"
         android:text="Modificar un Equipo"/>
+
+    <Switch
+            android:text="Switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginTop="-150sp"
+            android:layout_marginLeft="300sp"
+            android:layout_below="@id/btnCrearJugador"
+            android:id="@+id/switch2" />
 
 </RelativeLayout>
