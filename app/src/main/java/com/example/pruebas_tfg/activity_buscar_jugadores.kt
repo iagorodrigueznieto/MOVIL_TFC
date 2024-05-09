@@ -64,7 +64,7 @@ class activity_buscar_jugadores : AppCompatActivity() {
                                 val idJugador = jugadorJson.getInt("idJugador")
                                 val nombre = jugadorJson.getString("nombre")
                                 val fechaNacimiento = jugadorJson.getString("fechaNacimiento")
-                                val idEquipo = jugadorJson.getInt("idEquipo")
+                                val idEquipo : Int?= jugadorJson.getInt("idEquipo")
                                 val tarjetasAmarillas = jugadorJson.getInt("tarjetasAmarillas")
                                 val tarjetasRojas = jugadorJson.getInt("tarjetasRojas")
                                 val partidosJugados = jugadorJson.getInt("partidosJugados")
@@ -72,13 +72,11 @@ class activity_buscar_jugadores : AppCompatActivity() {
                                 val asistencias = jugadorJson.getInt("asistencias")
                                 val imagen = jugadorJson.getString("imagen")
                                 val codPosicion =  jugadorJson.getInt("codPosicion")
-                                val fecha = LocalDate.parse(fechaNacimiento)
-
                                 jugadores.add(
                                     Jugador(
                                         idJugador,
                                         nombre,
-                                        fecha,
+                                        fechaNacimiento,
                                         idEquipo,
                                         tarjetasAmarillas,
                                         tarjetasRojas,

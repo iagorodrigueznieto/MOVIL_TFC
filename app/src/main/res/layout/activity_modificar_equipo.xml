@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout2">
 
     <TextView
             android:layout_width="match_parent"
@@ -12,66 +13,102 @@
             android:padding="10sp"
             android:textSize="15sp"
             android:background="#673AB7"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:textStyle="bold|italic"
-            android:layout_marginTop="30sp"
-            android:layout_marginLeft="100sp"
-            android:text="Modifica a un equipo"/>
+            android:text="Modifica a un equipo"
+            android:id="@+id/textView3"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
     <EditText
-            android:layout_width="300sp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40sp"
-            android:layout_marginLeft="50sp"
             android:hint="Nombre del equipo"
-            android:id="@+id/nombreEquipo"/>
+            android:id="@+id/nombreEquipo"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            android:layout_marginTop="120sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
     <EditText
-            android:layout_width="300sp"
+            android:layout_width="250sp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50sp"
             android:id="@+id/editCiudad"
-            android:layout_marginTop="40sp"
-            android:hint="Ciudad"/>
+            android:hint="Ciudad"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            android:layout_marginTop="200sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+ />
+
+    <EditText
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/editPresidente"
+            android:hint="Presidente"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            android:layout_marginTop="280sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entrenador: "
             android:textSize="18sp"
             android:textStyle="italic|bold"
-            android:layout_marginLeft="50sp"
-            android:layout_marginTop="30sp"/>
-    <LinearLayout
+            android:id="@+id/textView10"
+            app:layout_constraintStart_toStartOf="@+id/editCiudad"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@+id/editCiudad" />
+
+    <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:orientation="horizontal">
-        <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/eleccionEntrenador"
-                android:layout_marginStart="50sp" />
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40sp"
-                android:id="@+id/btnCrearEntrenador"
-                android:text="Crea un entrenador"/>
+            android:id="@+id/eleccionEntrenador"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            android:layout_marginTop="340sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+      />
 
-    </LinearLayout>
 
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Modificar"
-            android:id="@+id/btnCrear"
-            android:layout_marginTop="100sp"
-            android:layout_marginLeft="150sp"/>
+            android:id="@+id/btnModificar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            android:layout_marginTop="400sp"
+            />
 
-</LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline13"
+            app:layout_constraintGuide_begin="20dp"
+            android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline14"
+            app:layout_constraintGuide_begin="20dp"
+            android:orientation="vertical" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

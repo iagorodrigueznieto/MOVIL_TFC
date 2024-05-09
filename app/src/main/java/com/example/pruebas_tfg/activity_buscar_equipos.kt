@@ -70,17 +70,18 @@ class activity_buscar_equipos: AppCompatActivity() {
                                 val idEntrenador = equipoJson.getInt("idEntrenador")
                                 val imagen = equipoJson.getString("imagen")
                                 val presidente = equipoJson.getString("presidente")
-
-                                jugadores.add(
-                                    Equipo(
-                                        idEquipo,
-                                        nombreEquipo,
-                                        ciudad,
-                                        idEntrenador,
-                                        imagen,
-                                        presidente
+                                if(idEquipo!=3333){
+                                    jugadores.add(
+                                        Equipo(
+                                            idEquipo,
+                                            nombreEquipo,
+                                            ciudad,
+                                            idEntrenador,
+                                            imagen,
+                                            presidente
+                                        )
                                     )
-                                )
+                                }
                                 runOnUiThread {
                                     val adapter = BuscarEquiposAdapterLista(baseContext, jugadores)
                                     lista.adapter = adapter

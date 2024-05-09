@@ -95,6 +95,13 @@
                 android:layout_marginLeft="130sp"
                 android:id="@+id/spinnerEquipo"/>
 
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            android:layout_marginLeft="130sp"
+            android:id="@+id/spinnerPosicion"/>
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

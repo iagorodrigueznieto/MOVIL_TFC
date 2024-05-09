@@ -173,6 +173,7 @@ class activity_crear_equipo : AppCompatActivity() {
                                                         spinner.adapter = adapter
                                                         nombreEquipo.setText("")
                                                         ciudad.setText("")
+                                                        finish()
                                                     }
                                                 }
                                             } catch (e: JSONException) {

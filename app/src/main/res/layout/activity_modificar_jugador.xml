@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
-            android:layout_marginTop="220sp"
+            android:layout_marginTop="240sp"
             app:layout_constraintStart_toEndOf="@id/medio"
             android:layout_marginLeft="-50sp"
             android:id="@+id/SpinnerEquipo"
@@ -95,6 +95,24 @@
             android:layout_marginRight="60sp"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
             android:text="Goles:"/>
+
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agente Libre"
+            app:layout_constraintStart_toStartOf="@id/medio"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            android:layout_marginTop="180sp"
+            android:id="@+id/checkbox"
+            android:layout_marginStart="4dp" />
+
+    <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/guideline12"
+            app:layout_constraintEnd_toStartOf="@id/medio"
+            android:layout_marginTop="190sp"
+            android:id="@+id/spinnerPosicion"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

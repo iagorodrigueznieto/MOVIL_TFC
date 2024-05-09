@@ -1,10 +1,12 @@
 package com.example.pruebas_tfg
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebas_tfg.Adapter.EquiposAdapterLiga
+import com.example.pruebas_tfg.Model.Equipo
 import com.example.pruebas_tfg.Model.Liga
 import com.example.pruebas_tfg.dto.ClasificacionInputDto
 import com.google.gson.Gson
@@ -19,7 +21,7 @@ class activity_Clasificacion_Liga : AppCompatActivity() {
         val listView = findViewById<ListView>(R.id.ListaEquipos)
         val client = OkHttpClient()
         val arrayEquipos = ArrayList<ClasificacionInputDto>()
-
+        var itemSeleccionado :ClasificacionInputDto? = null
         val liga: Liga? = intent.getSerializableExtra("liga") as Liga?
         val nombreLiga = findViewById<TextView>(R.id.nombreLiga)
         if (liga != null) {
@@ -51,7 +53,20 @@ class activity_Clasificacion_Liga : AppCompatActivity() {
                 }
             })
         }
+        var lastClickTime = 0L
+        listView.setOnItemClickListener { parent, view, position, id ->
 
+            val doubleClickTime = 300L
+            val clickTime = System.currentTimeMillis()
+            if (clickTime - lastClickTime < doubleClickTime) {
+                itemSeleccionado = listView.getItemAtPosition(position) as ClasificacionInputDto
+                val intent = Intent(baseContext, activity_info_1_equipo_1_liga::class.java)
+                intent.putExtra("liga",liga)
+                intent.putExtra("equipo",itemSeleccionado)
+                startActivity(intent)
+            }
+            lastClickTime = clickTime
 
+        }
     }
 }

@@ -1,16 +1,8 @@
 package com.example.pruebas_tfg.Model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-import androidx.annotation.NonNull;
-
-import java.lang.annotation.Annotation;
-import java.time.LocalDate;
-
 
 public class Equipo implements java.io.Serializable {
-    private Integer id;
+    private Integer idEquipo;
     private String nombreEquipo;
 
     private String ciudad;
@@ -31,8 +23,8 @@ public class Equipo implements java.io.Serializable {
         this.imagen = imagen;
     }
 
-    public Equipo(Integer id, String nombre, String ciudad, Integer idEntrenador, String imagen) {
-        this.id = id;
+    public Equipo(Integer idEquipo, String nombre, String ciudad, Integer idEntrenador, String imagen) {
+        this.idEquipo = idEquipo;
         this.nombreEquipo = nombre;
         this.ciudad = ciudad;
         this.idEntrenador = idEntrenador;
@@ -47,12 +39,12 @@ public class Equipo implements java.io.Serializable {
         this.presidente = presidente;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getIdEquipo() {
+        return idEquipo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdEquipo(Integer idEquipo) {
+        this.idEquipo = idEquipo;
     }
 
     public String getNombreEquipo() {
@@ -87,8 +79,8 @@ public class Equipo implements java.io.Serializable {
         this.imagen = imagen;
     }
 
-    public Equipo(Integer id, String nombreEquipo, String ciudad, Integer idEntrenador, String imagen, String presidente) {
-        this.id = id;
+    public Equipo(Integer idEquipo, String nombreEquipo, String ciudad, Integer idEntrenador, String imagen, String presidente) {
+        this.idEquipo = idEquipo;
         this.nombreEquipo = nombreEquipo;
         this.ciudad = ciudad;
         this.idEntrenador = idEntrenador;

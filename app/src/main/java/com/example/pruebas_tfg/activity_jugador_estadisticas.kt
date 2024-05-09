@@ -4,18 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebas_tfg.Model.Jugador
 import okhttp3.Call
 import okhttp3.Callback
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody
 import okhttp3.Response
 import java.io.IOException
 
@@ -59,9 +56,9 @@ class activity_jugador_estadisticas : AppCompatActivity() {
 
 
         btnEliminar.setOnClickListener {
-            finish()
 
-            val url = "http://192.168.2.211:8080/jugadores?id=${jugador.id}"
+
+            val url = "http://192.168.2.211:8080/jugadores?id=${jugador.idJugador}"
             var mediaType  = "application/json; charset=utf-8".toMediaTypeOrNull()
             val request=Request.Builder().url(url).delete().build()
             client.newCall(request).enqueue(object : Callback{
@@ -80,6 +77,7 @@ class activity_jugador_estadisticas : AppCompatActivity() {
                 }
 
             })
+            finish()
         }
         btnModificar.setOnClickListener {
             val intent = Intent(baseContext, activity_modificar_jugador::class.java)

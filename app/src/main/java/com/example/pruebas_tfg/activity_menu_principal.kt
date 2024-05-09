@@ -23,6 +23,7 @@ class activity_menu_principal : AppCompatActivity() {
         val login = findViewById<TextView>(R.id.login)
         val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
         val equipos = findViewById<Button>(R.id.btnEquipos)
+        val btnCrearJugador = findViewById<Button>(R.id.btnCrearJugador)
         var clasificacion = findViewById<Button>(R.id.btnLiga)
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
         val switch : Switch = findViewById(R.id.switch2)
@@ -52,6 +53,10 @@ class activity_menu_principal : AppCompatActivity() {
             }
 
 
+        }
+        btnCrearJugador.setOnClickListener {
+            val a = Intent(baseContext, activity_crear_jugador::class.java)
+            startActivity(a)
         }
         clasificacion.setOnClickListener {
             var menu = Intent(baseContext, activity_ver_ligas::class.java)

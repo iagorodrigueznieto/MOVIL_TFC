@@ -1,6 +1,8 @@
 package com.example.pruebas_tfg.dto;
 
-public class ClasificacionInputDto {
+import java.io.Serializable;
+
+public class ClasificacionInputDto  implements Serializable {
 
     private Integer idEquipo;
     private String nombreEquipo;

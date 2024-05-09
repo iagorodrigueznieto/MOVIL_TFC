@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_modificar_equipo"
+            android:exported="false" />
+        <activity android:name=".activity_crear_jugador"
+            android:exported="false" />
         <activity
                 android:name=".activity_seleccion_imagen"
                 android:exported="false" />
@@ -50,12 +54,6 @@
                 android:name=".activity_crear_equipo"
                 android:exported="false" />
         <activity
-                android:name=".activity_crear_jugador"
-                android:exported="false" />
-        <activity
-                android:name=".activity_modificar_equipo"
-                android:exported="false" />
-        <activity
                 android:name=".activity_modificar_jugador"
                 android:exported="true" />
         <activity android:name=".activity_jugador_estadisticas"
@@ -63,6 +61,10 @@
         <activity android:name=".activity_buscar_equipos"
             android:exported="false"/>
         <activity android:name=".activity_info_equipo"
+                android:exported="false"/>
+        <activity android:name=".activity_info_1_equipo_1_liga"
+            android:exported="false"/>
+        <activity android:name=".activity_modificar_equipo_liga"
                 android:exported="false"/>
     </application>
 
