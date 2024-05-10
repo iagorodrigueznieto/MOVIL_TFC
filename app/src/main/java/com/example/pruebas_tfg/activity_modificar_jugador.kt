@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.pruebas_tfg.Model.Jugador
 import com.google.gson.Gson
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -24,6 +25,13 @@ class activity_modificar_jugador : AppCompatActivity() {
         val intent = intent
         val jugador = intent.getSerializableExtra("jugador") as Jugador
         val client  = OkHttpClient()
+        val checkBox = findViewById<CheckBox>(R.id.checkbox)
+        val spinnerEquipo = findViewById<Spinner>(R.id.SpinnerEquipo)
+        if(checkBox.isChecked){
+            spinnerEquipo.isVisible = false
+        }else{
+            spinnerEquipo.isVisible = true
+        }
         val spinner = findViewById<Spinner>(R.id.SpinnerEquipo)
         val btn = findViewById<Button>(R.id.btnmodificarJugador)
         val spinnerPosicion = findViewById<Spinner>(R.id.spinnerPosicion)
@@ -47,9 +55,9 @@ class activity_modificar_jugador : AppCompatActivity() {
 
         btn.setOnClickListener {
             if(chexkBox.isChecked){
-             jugador.idEquipo = null
+             jugador.id_equipo = null
             }
-            jugador.idJugador = jugador.idJugador
+            jugador.id_jugador = jugador.id_jugador
             jugador.nombre = nombre.text.toString()
             jugador.goles = goles.text.toString().toInt()
             jugador.asistencias = asistencias.text.toString().toInt()
@@ -94,15 +102,15 @@ class activity_modificar_jugador : AppCompatActivity() {
                 id: Long
             ) {
                 if (array[position]=="Portero"){
-                    jugador.codPosicion = 1
+                    jugador.cod_Posicion = 1
                 }else if(array[position]=="Defensa"){
-                    jugador.codPosicion = 2
+                    jugador.cod_Posicion = 2
 
                 }else if (array[position]=="Mediocentro"){
-                    jugador.codPosicion = 3
+                    jugador.cod_Posicion = 3
 
                 }else if (array[position]=="Delantero"){
-                    jugador.codPosicion = 4
+                    jugador.cod_Posicion = 4
 
                 }
 

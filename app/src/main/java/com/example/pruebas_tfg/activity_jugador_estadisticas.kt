@@ -40,13 +40,13 @@ class activity_jugador_estadisticas : AppCompatActivity() {
             tarjetasAmarillas.text = jugador.tarjetasAmarillas.toString()
             tarjetasRojas.text = jugador.tarjetasRojas.toString()
             fechaNacimiento.text = jugador.fechaNacimiento.toString()
-            if(jugador.codPosicion == 1){
+            if(jugador.cod_Posicion == 1){
                 posicion.text =("Portero")
 
-            }else if (jugador.codPosicion == 2){
+            }else if (jugador.cod_Posicion == 2){
                 posicion.text = ("Defensa")
 
-            }else if (jugador.codPosicion == 3){
+            }else if (jugador.cod_Posicion == 3){
                 posicion.text = "MedioCentro"
 
             }else{
@@ -58,7 +58,7 @@ class activity_jugador_estadisticas : AppCompatActivity() {
         btnEliminar.setOnClickListener {
 
 
-            val url = "http://192.168.2.211:8080/jugadores?id=${jugador.idJugador}"
+            val url = "http://192.168.2.211:8080/jugadores?id=${jugador.id_jugador}"
             var mediaType  = "application/json; charset=utf-8".toMediaTypeOrNull()
             val request=Request.Builder().url(url).delete().build()
             client.newCall(request).enqueue(object : Callback{

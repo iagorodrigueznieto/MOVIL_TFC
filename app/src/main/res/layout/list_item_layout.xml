@@ -9,23 +9,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100sp">
+        <ImageView
+                android:layout_width="60sp"
+                android:layout_height="60sp"
+                android:src="@drawable/icono_jugador"
+                android:layout_marginLeft="10sp"/>
+
 
         <TextView
             android:id="@+id/nombreTextView"
             android:layout_width="wrap_content"
             android:text="Adios"
+                android:layout_marginTop="10sp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30sp"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/edadTextView"
-            android:text="hola"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30sp"
-            android:textSize="16sp"/>
+
 
     </LinearLayout>
 

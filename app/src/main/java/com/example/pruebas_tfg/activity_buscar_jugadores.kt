@@ -61,17 +61,17 @@ class activity_buscar_jugadores : AppCompatActivity() {
                             val jsonArray = JSONArray(responseData)
                             for (i in 0 until jsonArray.length()){
                                 val jugadorJson = jsonArray.getJSONObject(i)
-                                val idJugador = jugadorJson.getInt("idJugador")
+                                val idJugador = jugadorJson.getInt("id_jugador")
                                 val nombre = jugadorJson.getString("nombre")
                                 val fechaNacimiento = jugadorJson.getString("fechaNacimiento")
-                                val idEquipo : Int?= jugadorJson.getInt("idEquipo")
+                                val idEquipo : Int?= jugadorJson.getInt("id_equipo")
                                 val tarjetasAmarillas = jugadorJson.getInt("tarjetasAmarillas")
                                 val tarjetasRojas = jugadorJson.getInt("tarjetasRojas")
                                 val partidosJugados = jugadorJson.getInt("partidosJugados")
                                 val goles = jugadorJson.getInt("goles")
                                 val asistencias = jugadorJson.getInt("asistencias")
                                 val imagen = jugadorJson.getString("imagen")
-                                val codPosicion =  jugadorJson.getInt("codPosicion")
+                                val codPosicion =  jugadorJson.getInt("cod_Posicion")
                                 jugadores.add(
                                     Jugador(
                                         idJugador,

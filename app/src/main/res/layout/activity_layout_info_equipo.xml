@@ -140,12 +140,14 @@
             app:layout_constraintGuide_percent="0.30"
             android:orientation="vertical" />
 
+
     <androidx.constraintlayout.widget.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/vertical5"
             app:layout_constraintGuide_percent="0.50"
             android:orientation="vertical" />
+
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -153,6 +155,17 @@
             app:layout_constraintTop_toTopOf="@id/horizontal4"
             app:layout_constraintStart_toStartOf="@+id/vertical5"
             android:id="@+id/btnModificarEquipo"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Ver Jugadores del equipo"
+            android:layout_marginTop="60sp"
+            app:layout_constraintTop_toTopOf="@+id/horizontal4"
+            android:id="@+id/btnVerJugadoresEquipo"/>"
+
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

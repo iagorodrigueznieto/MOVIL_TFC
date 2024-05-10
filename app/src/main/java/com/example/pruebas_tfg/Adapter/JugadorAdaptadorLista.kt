@@ -39,13 +39,11 @@ class JugadorAdaptadorLista(
 
         val jugador = jugadores.get(position)
         viewHolder.nombreTextView.text=jugador.nombre
-        viewHolder.edadTextView.text=Integer.toString(jugador.goles)
         return view
     }
 
     private class ViewHolder(view: View) {
         val nombreTextView: TextView = view.findViewById(R.id.nombreTextView)
-        val edadTextView: TextView = view.findViewById(R.id.edadTextView)
     }
 
 }

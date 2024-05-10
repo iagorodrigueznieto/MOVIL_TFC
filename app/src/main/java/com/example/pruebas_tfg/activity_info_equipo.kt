@@ -109,5 +109,12 @@ class activity_info_equipo : AppCompatActivity() {
 
             })
         }
+
+        val btnVerJugadores = findViewById<Button>(R.id.btnVerJugadoresEquipo)
+        btnVerJugadores.setOnClickListener {
+            val intent = Intent(this, activity_ver_jugadores_de_un_equipo::class.java)
+            intent.putExtra("equipo", equipoAverInfo)
+            startActivity(intent)
+        }
     }
 }

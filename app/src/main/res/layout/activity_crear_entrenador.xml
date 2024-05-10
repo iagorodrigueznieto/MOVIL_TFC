@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    
+    <ImageView
+            android:layout_width="60sp"
+            android:layout_height="60sp"
+            android:src="@drawable/icono_entrenador"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal"
+            android:layout_marginTop="-30sp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Nombre"
+            android:id="@+id/nombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal"
+            android:layout_marginBottom="-10sp" />
+
+    <EditText
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/apellidos"
+            android:hint="Apellidos"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal"/>
+
+    <EditText
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            android:hint="Nacionalidad"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="200sp"
+            android:id="@+id/nacionalidad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/horizontal"
+            android:layout_marginTop="300sp"
+            android:id="@+id/btnCrear"
+            android:text="Crear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontal"
+            app:layout_constraintGuide_percent="0.05"
+            android:orientation="horizontal" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

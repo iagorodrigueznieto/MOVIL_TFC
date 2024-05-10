@@ -3,6 +3,7 @@ package com.example.pruebas_tfg
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Switch
@@ -77,6 +78,10 @@ class activity_menu_principal : AppCompatActivity() {
             val a= Intent(baseContext, activity_crear_equipo::class.java)
             startActivity(a)
         }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_principal,menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
