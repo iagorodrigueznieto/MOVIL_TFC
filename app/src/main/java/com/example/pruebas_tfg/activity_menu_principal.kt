@@ -23,15 +23,13 @@ class activity_menu_principal : AppCompatActivity() {
         val usuario: User? = intent.getSerializableExtra("usuario") as? User
         val login = findViewById<TextView>(R.id.login)
         val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
+        val btnCrearEntrenador = findViewById<Button>(R.id.crearEntrenador)
+
         val equipos = findViewById<Button>(R.id.btnEquipos)
         val btnCrearJugador = findViewById<Button>(R.id.btnCrearJugador)
         var clasificacion = findViewById<Button>(R.id.btnLiga)
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
-        val switch : Switch = findViewById(R.id.switch2)
-        if(switch.isActivated){
-            btnCrearLiga.setText( "Crea unha Liga")
-            clasificacion.setText ("Clasificacion da liga")
-        }
+        val btnBuscarEntrenador = findViewById<Button>(R.id.BuscarEntrenador)
         if (usuario != null) {
             if (usuario.cod_Rol!=1){
                 btnCrearLiga.isVisible=false
@@ -54,6 +52,10 @@ class activity_menu_principal : AppCompatActivity() {
             }
 
 
+        }
+        btnCrearEntrenador.setOnClickListener {
+            val a = Intent(baseContext, activity_crear_entrenador::class.java)
+            startActivity(a)
         }
         btnCrearJugador.setOnClickListener {
             val a = Intent(baseContext, activity_crear_jugador::class.java)
@@ -78,6 +80,12 @@ class activity_menu_principal : AppCompatActivity() {
             val a= Intent(baseContext, activity_crear_equipo::class.java)
             startActivity(a)
         }
+
+        btnBuscarEntrenador.setOnClickListener {
+            val a= Intent(baseContext, activity_buscar_entrenador::class.java)
+            startActivity(a)
+        }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

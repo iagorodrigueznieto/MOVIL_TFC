@@ -23,8 +23,6 @@ import okhttp3.Response
 import org.json.JSONArray
 import org.json.JSONException
 import java.io.IOException
-import java.net.URL
-import java.time.LocalDate
 
 
 class activity_crear_equipo : AppCompatActivity() {
@@ -32,7 +30,7 @@ class activity_crear_equipo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_equipo)
-        val button: Button = findViewById(R.id.btnCrear)
+        val button: Button = findViewById(R.id.crearEntrenador)
         val spinner: Spinner = findViewById(R.id.eleccionEntrenador)
         val ciudad: EditText = findViewById(R.id.editCiudad)
         val nombreEquipo: EditText = findViewById(R.id.nombreEquipo)
@@ -70,7 +68,7 @@ class activity_crear_equipo : AppCompatActivity() {
                                     nombre,
                                     apellido,
                                     nacionalidad,
-                                    LocalDate.parse(fechanacimiento)
+                                    fechanacimiento
                                 )
                             )
                             if (entrenadores.size == 0) {
@@ -99,7 +97,7 @@ class activity_crear_equipo : AppCompatActivity() {
                 val equipo = entrenadorSeleccionado?.let { it1 ->
                     Equipo(
                         nombreEquipo.text.toString(), ciudad.text.toString(),
-                        it1.id, null,presidente.text.toString()
+                        it1.idEntrenador, null,presidente.text.toString()
                     )
                 }
 
@@ -158,7 +156,7 @@ class activity_crear_equipo : AppCompatActivity() {
                                                             nombre,
                                                             apellido,
                                                             nacionalidad,
-                                                            LocalDate.parse(fechanacimiento)
+                                                            fechanacimiento
                                                         )
                                                     )
                                                     if (entrenadores.size == 0) {

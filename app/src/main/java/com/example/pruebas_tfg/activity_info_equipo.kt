@@ -72,7 +72,7 @@ class activity_info_equipo : AppCompatActivity() {
                                     nombre,
                                     apellido,
                                     nacionalidad,
-                                    LocalDate.parse(fechanacimiento)
+                                    fechanacimiento
                                 )
                             )
 

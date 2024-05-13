@@ -104,24 +104,33 @@
             android:id="@+id/btnModificarJugador"
             android:text="Modificar un jugador"
             android:layout_marginLeft="300sp"
-            android:layout_marginTop="70sp" />
+            android:layout_marginTop="60dp" />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/BuscarEntrenador"
+            android:id="@+id/crearEntrenador"
+            android:text="Crear un entrenador"
+            android:layout_marginLeft="220sp"
+            android:layout_marginTop="60dp"/>
 
-<Button
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btnModificarJugador"
         android:layout_marginLeft="240sp"
         android:layout_marginTop="50sp"
         android:text="Modificar un Equipo"/>
-
-    <Switch
-            android:text="Switch"
+    
+    
+    <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginTop="-150sp"
-            android:layout_marginLeft="300sp"
-            android:layout_below="@id/btnCrearJugador"
-            android:id="@+id/switch2" />
+            android:text="Buscar entrenadores"
+            android:id="@+id/BuscarEntrenador"
+            android:layout_marginLeft="240sp"
+            android:layout_marginTop="500sp"/>
+
+    
 
 </RelativeLayout>

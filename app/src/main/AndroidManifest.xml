@@ -28,12 +28,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_buscar_entrenador"
+            android:exported="false"/>
+        <activity android:name=".activity_crear_entrenador"
+            android:exported="false"/>
         <activity android:name=".activity_ver_jugadores_de_un_equipo"
             android:exported="false"/>
         <activity android:name=".activity_modificar_equipo"
             android:exported="false" />
         <activity android:name=".activity_crear_jugador"
             android:exported="false" />
+        <activity android:name=".activity_info_entrenador"
+            android:exported="false" />
+        <activity android:name=".activity_modificar_entrenador"
+            android:exported="false"/>
         <activity
                 android:name=".activity_seleccion_imagen"
                 android:exported="false" />

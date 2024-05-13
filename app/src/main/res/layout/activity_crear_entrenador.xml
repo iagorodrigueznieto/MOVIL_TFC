@@ -44,16 +44,27 @@
             android:id="@+id/nacionalidad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/horizontal"/>
+    <EditText
+            android:layout_width="240sp"
+            android:layout_height="wrap_content"
+            android:hint="Fecha de nacimiento"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="280sp"
+            android:id="@+id/fechaDeNacimiento"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontal"/>
 
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/horizontal"
-            android:layout_marginTop="300sp"
-            android:id="@+id/btnCrear"
+            android:layout_marginTop="380sp"
+            android:id="@+id/crearEntrenador"
             android:text="Crear"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <androidx.constraintlayout.widget.Guideline
             android:layout_width="wrap_content"
