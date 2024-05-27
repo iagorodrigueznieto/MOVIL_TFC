@@ -62,6 +62,8 @@ class activity_crear_entrenador : AppCompatActivity() {
                 }else{
                     Toast.makeText(this, "Fecha no valida", Toast.LENGTH_SHORT).show()
                 }
+            }else{
+                Toast.makeText(this, "Faltan datos por introducir", Toast.LENGTH_SHORT).show()
             }
         }
     }

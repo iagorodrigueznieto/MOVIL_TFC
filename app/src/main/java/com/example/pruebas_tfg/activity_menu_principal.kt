@@ -22,7 +22,6 @@ class activity_menu_principal : AppCompatActivity() {
         val imagen: ImageView = findViewById(R.id.ImagenUsuario)
         val usuario: User? = intent.getSerializableExtra("usuario") as? User
         val login = findViewById<TextView>(R.id.login)
-        val btnCrearLiga = findViewById<Button>(R.id.btnCrearLigas)
         val btnCrearEntrenador = findViewById<Button>(R.id.crearEntrenador)
 
         val equipos = findViewById<Button>(R.id.btnEquipos)
@@ -31,9 +30,7 @@ class activity_menu_principal : AppCompatActivity() {
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
         val btnBuscarEntrenador = findViewById<Button>(R.id.BuscarEntrenador)
         if (usuario != null) {
-            if (usuario.cod_Rol!=1){
-                btnCrearLiga.isVisible=false
-            }
+
         }
         if (usuario != null) {
 
