@@ -59,35 +59,40 @@ class activity_modificar_equipo : AppCompatActivity() {
         val btnModificar = findViewById<Button>(R.id.btnModificar)
 
         btnModificar.setOnClickListener {
-            equipo.idEquipo = equipo.idEquipo
-            equipo.nombreEquipo = nombre.text.toString()
-            equipo.ciudad= editCiudad.text.toString()
-            equipo.presidente =presidente.text.toString()
-            val json = Gson().toJson(equipo)
-            val requestBody =json.toRequestBody("application/json".toMediaTypeOrNull())
+            if(nombre.text.toString().isEmpty() || editCiudad.text.toString().isEmpty() || presidente.text.toString().isEmpty()){
+                Toast.makeText(this@activity_modificar_equipo, "Debe completar todos los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                equipo.idEquipo = equipo.idEquipo
+                equipo.nombreEquipo = nombre.text.toString()
+                equipo.ciudad= editCiudad.text.toString()
+                equipo.presidente =presidente.text.toString()
+                val json = Gson().toJson(equipo)
+                val requestBody =json.toRequestBody("application/json".toMediaTypeOrNull())
 
-            val request = Request.Builder()
-                .url("http://192.168.2.211:8080/equipos")
-                .put(requestBody)
-                .build()
-            client.newCall(request).enqueue(object  : Callback{
-                override fun onFailure(call: Call, e: IOException) {
-                }
+                val request = Request.Builder()
+                    .url("http://192.168.2.211:8080/equipos")
+                    .put(requestBody)
+                    .build()
+                client.newCall(request).enqueue(object  : Callback{
+                    override fun onFailure(call: Call, e: IOException) {
+                    }
 
-                override fun onResponse(call: Call, response: Response) {
-                    if(response.code==200){
+                    override fun onResponse(call: Call, response: Response) {
+                        if(response.code==200){
                             runOnUiThread {
                                 Toast.makeText(this@activity_modificar_equipo, "Equipo Modificado con éxito", Toast.LENGTH_SHORT).show()
                             }
-                        finish()
-                    }else{
-                        runOnUiThread {
-                            Toast.makeText(this@activity_modificar_equipo, "Error al modificar el equipo", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }else{
+                            runOnUiThread {
+                                Toast.makeText(this@activity_modificar_equipo, "Error al modificar el equipo", Toast.LENGTH_SHORT).show()
+                            }
                         }
                     }
-                }
 
-            })
+                })
+
+            }
 
 
         }

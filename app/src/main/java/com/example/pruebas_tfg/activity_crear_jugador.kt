@@ -43,60 +43,68 @@ class activity_crear_jugador : AppCompatActivity() {
         val client = OkHttpClient()
 
         btn.setOnClickListener {
+            if (nombreJugador.text.toString().isEmpty() || tarjetasAmarillas.text.toString()
+                    .isEmpty() || tarjetasRojas.text.toString().isEmpty() || Goles.text.toString()
+                    .isEmpty() || asistencias.text.toString().isEmpty()
+            ) {
+                Toast.makeText(this, "Por favor rellene todos los datos", Toast.LENGTH_SHORT).show()
+            } else {
+                val gson = Gson()
+                val jugador = Jugador(
+                    nombreJugador.text.toString(),
+                    "",
+                    3333,
+                    tarjetasAmarillas.text.toString().toInt(),
+                    tarjetasRojas.text.toString().toInt(),
+                    0,
+                    Goles.text.toString().toInt(),
+                    asistencias.text.toString().toInt(),
+                    null,
+                    posicion
+                )
+                val json = gson.toJson(jugador)
+                val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
+                val request = Request.Builder()
+                    .url("http://192.168.2.211:8080/jugadores")
+                    .post(requestBody)
+                    .build()
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
 
-            val gson = Gson()
-            val jugador = Jugador(
-                nombreJugador.text.toString(),
-                "",
-                3333,
-                tarjetasAmarillas.text.toString().toInt(),
-                tarjetasRojas.text.toString().toInt(),
-                0,
-                Goles.text.toString().toInt(),
-                asistencias.text.toString().toInt(),
-                null,
-                posicion
-            )
-            val json = gson.toJson(jugador)
-            val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
-            val request = Request.Builder()
-                .url("http://192.168.2.211:8080/jugadores")
-                .post(requestBody)
-                .build()
-            client.newCall(request).enqueue(object : Callback {
-                override fun onFailure(call: Call, e: IOException) {
+                    }
 
-                }
-
-                override fun onResponse(call: Call, response: Response) {
-                    if (response.code == 200) {
-                        runOnUiThread {
-                            Toast.makeText(
-                                baseContext,
-                                "Jugador insertado con éxito",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }
-                    } else {
-                        runOnUiThread {
-                            Toast.makeText(
-                                baseContext,
-                                "Error al insertar jugador",
-                                Toast.LENGTH_LONG
-                            ).show()
+                    override fun onResponse(call: Call, response: Response) {
+                        if (response.code == 200) {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    baseContext,
+                                    "Jugador insertado con éxito",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                        } else {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    baseContext,
+                                    "Error al insertar jugador",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
                         }
                     }
-                }
 
-            })
-            finish()
+                })
+                finish()
+            }
+
 
         }
 
 
         val array = arrayOf("Portero", "Defensa", "Mediocentro", "Delantero")
 
-        spinnerPosicion.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array)
+        spinnerPosicion.adapter =
+            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array)
 
         spinnerPosicion.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(

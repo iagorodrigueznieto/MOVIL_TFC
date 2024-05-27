@@ -40,8 +40,8 @@ class activity_Clasificacion_Liga : AppCompatActivity() {
                         val jsonString = body?.string()
                         val gson = Gson()
                         val equipos = gson.fromJson(jsonString, Array<ClasificacionInputDto>::class.java).toList()
-                        for (i in 0 until equipos.size) {
-                            arrayEquipos.add(equipos.get(i))
+                        for (i in equipos.indices) {
+                            arrayEquipos.add(equipos[i])
                         }
                         runOnUiThread {
                             val adapter = EquiposAdapterLiga(baseContext, arrayEquipos)

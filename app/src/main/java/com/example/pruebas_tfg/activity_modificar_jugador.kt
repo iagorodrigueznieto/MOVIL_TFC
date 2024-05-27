@@ -57,39 +57,41 @@ class activity_modificar_jugador : AppCompatActivity() {
             if(chexkBox.isChecked){
              jugador.id_equipo = null
             }
-            jugador.id_jugador = jugador.id_jugador
-            jugador.nombre = nombre.text.toString()
-            jugador.goles = goles.text.toString().toInt()
-            jugador.asistencias = asistencias.text.toString().toInt()
-            jugador.tarjetasAmarillas = tarjetasAmarillas.text.toString().toInt()
-            jugador.tarjetasRojas = tarjetasRojas.text.toString().toInt()
-            jugador.partidosJugados = tarjetasRojas.text.toString().toInt()
-            val json = Gson().toJson(jugador)
-            val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
-            val request = okhttp3.Request.Builder()
-                .url("http://192.168.2.211:8080/jugadores")
-                .put(requestBody)
-                .build()
+            if (nombre.text.isEmpty() || goles.text.isEmpty() || asistencias.text.isEmpty() || tarjetasAmarillas.text.isEmpty() || tarjetasRojas.text.isEmpty()){
+                Toast.makeText(baseContext, "Debe completar todos los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                jugador.id_jugador = jugador.id_jugador
+                jugador.nombre = nombre.text.toString()
+                jugador.goles = goles.text.toString().toInt()
+                jugador.asistencias = asistencias.text.toString().toInt()
+                jugador.tarjetasAmarillas = tarjetasAmarillas.text.toString().toInt()
+                jugador.tarjetasRojas = tarjetasRojas.text.toString().toInt()
+                jugador.partidosJugados = tarjetasRojas.text.toString().toInt()
+                val json = Gson().toJson(jugador)
+                val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
+                val request = okhttp3.Request.Builder()
+                    .url("http://192.168.2.211:8080/jugadores")
+                    .put(requestBody)
+                    .build()
 
-            client.newCall(request).enqueue(object : okhttp3.Callback {
-                override fun onFailure(call: okhttp3.Call, e: java.io.IOException) {
-                    runOnUiThread{
-                        Toast.makeText(baseContext, "Error al modificar jugador", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
-                    if(response.code == 200){
-                        runOnUiThread {
-                            Toast.makeText(baseContext, "Jugador modificado", Toast.LENGTH_SHORT).show()
-                            finish()
+                client.newCall(request).enqueue(object : okhttp3.Callback {
+                    override fun onFailure(call: okhttp3.Call, e: java.io.IOException) {
+                        runOnUiThread{
+                            Toast.makeText(baseContext, "Error al modificar jugador", Toast.LENGTH_SHORT).show()
                         }
-
                     }
-                }
+                    override fun onResponse(call: okhttp3.Call, response: okhttp3.Response) {
+                        if(response.code == 200){
+                            runOnUiThread {
+                                Toast.makeText(baseContext, "Jugador modificado", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
 
-            })
+                        }
+                    }
 
-
+                })
+            }
         }
 
 

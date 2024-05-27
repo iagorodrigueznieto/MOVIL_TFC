@@ -27,7 +27,7 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
         val liga = intent.getSerializableExtra("liga") as Liga
         val nombre = findViewById<TextView>(R.id.nombreEquipo)
         nombre.setText(equipo.nombreEquipo)
-        val client  = okhttp3.OkHttpClient()
+        val client = okhttp3.OkHttpClient()
         val puntos = findViewById<EditText>(R.id.puntos)
         val partidosJugados = findViewById<EditText>(R.id.partidosJugados)
         val partidosGanados = findViewById<EditText>(R.id.partidosGanados)
@@ -37,7 +37,8 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
         val golesEnContra = findViewById<EditText>(R.id.GolesEnContra)
         val nombreLiga = findViewById<TextView>(R.id.nombreLiga)
         nombreLiga.setText(liga.nombre)
-        val url = "http://192.168.2.211:8080/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
+        val url =
+            "http://192.168.2.211:8080/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
         val request = okhttp3.Request.Builder().url(url).build()
         val request2 = okhttp3.Request.Builder()
 
@@ -62,29 +63,58 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
         })
 
         val btnGuardar = findViewById<Button>(R.id.btnModificar)
-        btnGuardar.setOnClickListener{
-            val url = "http://192.168.2.211:8080/liga/info"
-            val json = Gson().toJson(InfoEquipoEn1LigaOutputDto(equipo.idEquipo.toInt(),liga.codLiga.toInt(),puntos.text.toString().toInt(),partidosJugados.text.toString().toInt(),partidosGanados.text.toString().toInt(),partidosEmpatados.text.toString().toInt(),partidosPerdidos.text.toString().toInt(),golesAFavor.text.toString().toInt(),golesEnContra.text.toString().toInt()))
-            val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
-            val request = okhttp3.Request.Builder()
-                .put(requestBody)
-                .url(url)
-                .build()
-            client.newCall(request).enqueue(object :Callback{
-                override fun onFailure(call: Call, e: IOException) {
-                }
-                override fun onResponse(call: Call, response: Response) {
-                    if(response.code == 200){
-                        runOnUiThread {
-                            Toast.makeText(this@activity_modificar_equipo_liga, "Equipo modificado", Toast.LENGTH_SHORT).show()
-                        }
-                        finish()
+        btnGuardar.setOnClickListener {
+            if (puntos.text.toString().isEmpty() || partidosJugados.text.toString()
+                    .isEmpty() || partidosGanados.text.toString()
+                    .isEmpty() || partidosEmpatados.text.toString()
+                    .isEmpty() || partidosPerdidos.text.toString()
+                    .isEmpty() || golesAFavor.text.toString().isEmpty()
+            ) {
+                Toast.makeText(
+                    this@activity_modificar_equipo_liga,
+                    "Rellene todos los campos",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                val url = "http://192.168.2.211:8080/liga/info"
+                val json = Gson().toJson(
+                    InfoEquipoEn1LigaOutputDto(
+                        equipo.idEquipo.toInt(),
+                        liga.codLiga.toInt(),
+                        puntos.text.toString().toInt(),
+                        partidosJugados.text.toString().toInt(),
+                        partidosGanados.text.toString().toInt(),
+                        partidosEmpatados.text.toString().toInt(),
+                        partidosPerdidos.text.toString().toInt(),
+                        golesAFavor.text.toString().toInt(),
+                        golesEnContra.text.toString().toInt()
+                    )
+                )
+                val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
+                val request = okhttp3.Request.Builder()
+                    .put(requestBody)
+                    .url(url)
+                    .build()
+                client.newCall(request).enqueue(object : Callback {
+                    override fun onFailure(call: Call, e: IOException) {
                     }
-                }
-            })
+
+                    override fun onResponse(call: Call, response: Response) {
+                        if (response.code == 200) {
+                            runOnUiThread {
+                                Toast.makeText(
+                                    this@activity_modificar_equipo_liga,
+                                    "Equipo modificado",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                            finish()
+                        }
+                    }
+                })
+            }
         }
     }
-
 
 
 }

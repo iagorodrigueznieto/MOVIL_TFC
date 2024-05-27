@@ -89,7 +89,7 @@ class activity_crear_equipo : AppCompatActivity() {
         })
 
         button.setOnClickListener {
-            if (nombreEquipo.text.toString().isEmpty() || ciudad.text.toString().isEmpty()) {
+            if (nombreEquipo.text.toString().isEmpty() || ciudad.text.toString().isEmpty()|| presidente.text.toString().isEmpty()) {
                 Toast.makeText(baseContext, "Tiene que rellenar los campos",Toast.LENGTH_LONG).show()
             } else {
                 val gson = Gson()

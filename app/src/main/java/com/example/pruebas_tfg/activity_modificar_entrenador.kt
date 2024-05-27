@@ -34,31 +34,35 @@ class activity_modificar_entrenador : AppCompatActivity() {
         fechaNacimiento.setText(entrenador.fechaDeNacimiento)
 
         button.setOnClickListener {
-            val nuevo = Entrenador(
-                entrenador.idEntrenador,
-                nombre.text.toString(),
-                apellido.text.toString(),
-                nacionalidad.text.toString(),
-                fechaNacimiento.text.toString()
-            )
-            val json = Gson().toJson(nuevo)
-            val mediaType = "application/json; charset=utf-8".toMediaTypeOrNull()
-            val body = RequestBody.create(mediaType, json)
-            val request = Request.Builder().url("http://192.168.2.211:8080/entrenadores").put(body).build()
-            client.newCall(request).enqueue(object : Callback{
-                override fun onFailure(call: Call, e: IOException) {
+            if(nombre.text.isEmpty() || apellido.text.isEmpty() || nacionalidad.text.isEmpty() || fechaNacimiento.text.isEmpty()){
+                Toast.makeText(this, "Debe rellenar todos los campos", Toast.LENGTH_SHORT).show()
+            }else{
+                val nuevo = Entrenador(
+                    entrenador.idEntrenador,
+                    nombre.text.toString(),
+                    apellido.text.toString(),
+                    nacionalidad.text.toString(),
+                    fechaNacimiento.text.toString()
+                )
+                val json = Gson().toJson(nuevo)
+                val mediaType = "application/json; charset=utf-8".toMediaTypeOrNull()
+                val body = RequestBody.create(mediaType, json)
+                val request = Request.Builder().url("http://192.168.2.211:8080/entrenadores").put(body).build()
+                client.newCall(request).enqueue(object : Callback{
+                    override fun onFailure(call: Call, e: IOException) {
 
-                }
-
-                override fun onResponse(call: Call, response: Response) {
-                    if(response.code == 200){
-                        runOnUiThread {
-                            Toast.makeText(this@activity_modificar_entrenador, "Entrenador modificado", Toast.LENGTH_SHORT).show()
-                        }
-                        finish()
                     }
-                }
-            })
+
+                    override fun onResponse(call: Call, response: Response) {
+                        if(response.code == 200){
+                            runOnUiThread {
+                                Toast.makeText(this@activity_modificar_entrenador, "Entrenador modificado", Toast.LENGTH_SHORT).show()
+                            }
+                            finish()
+                        }
+                    }
+                })
+            }
         }
     }
 }
