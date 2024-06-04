@@ -23,20 +23,14 @@ class activity_modificar_jugador : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modificar_jugador)
         val intent = intent
+        var posicion : Int = 0
         val jugador = intent.getSerializableExtra("jugador") as Jugador
         val client  = OkHttpClient()
         val checkBox = findViewById<CheckBox>(R.id.checkbox)
-        val spinnerEquipo = findViewById<Spinner>(R.id.SpinnerEquipo)
-        if(checkBox.isChecked){
-            spinnerEquipo.isVisible = false
-        }else{
-            spinnerEquipo.isVisible = true
-        }
-        val spinner = findViewById<Spinner>(R.id.SpinnerEquipo)
+        val spinner = findViewById<Spinner>(R.id.spinnerPosicion)
         val btn = findViewById<Button>(R.id.btnmodificarJugador)
-        val spinnerPosicion = findViewById<Spinner>(R.id.spinnerPosicion)
         val array  = arrayOf("Portero","Defensa","Mediocentro","Delantero")
-        spinnerPosicion.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,array )
+        spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item,array )
 
         val nombre = findViewById<EditText>(R.id.nombreJugador)
         val goles = findViewById<EditText>(R.id.goles)
@@ -45,22 +39,21 @@ class activity_modificar_jugador : AppCompatActivity() {
         val tarjetasRojas=findViewById<EditText>(R.id.tarjetasRojas)
         val chexkBox  : CheckBox = findViewById(R.id.checkbox)
 
-        if(jugador!=null){
-            goles.setText(jugador.goles.toString())
-            nombre.setText(jugador.nombre.toString())
-            asistencias.setText(jugador.asistencias.toString())
-            tarjetasAmarillas.setText(jugador.tarjetasAmarillas.toString())
-            tarjetasRojas.setText(jugador.tarjetasRojas.toString())
-        }
+        goles.setText(jugador.goles.toString())
+        nombre.setText(jugador.nombre.toString())
+        asistencias.setText(jugador.asistencias.toString())
+        tarjetasAmarillas.setText(jugador.tarjetasAmarillas.toString())
+        tarjetasRojas.setText(jugador.tarjetasRojas.toString())
 
         btn.setOnClickListener {
             if(chexkBox.isChecked){
-             jugador.id_equipo = null
+             jugador.id_equipo = 3333
             }
             if (nombre.text.isEmpty() || goles.text.isEmpty() || asistencias.text.isEmpty() || tarjetasAmarillas.text.isEmpty() || tarjetasRojas.text.isEmpty()){
                 Toast.makeText(baseContext, "Debe completar todos los campos", Toast.LENGTH_SHORT).show()
             }else{
                 jugador.id_jugador = jugador.id_jugador
+                jugador.cod_Posicion = posicion
                 jugador.nombre = nombre.text.toString()
                 jugador.goles = goles.text.toString().toInt()
                 jugador.asistencias = asistencias.text.toString().toInt()
@@ -104,15 +97,15 @@ class activity_modificar_jugador : AppCompatActivity() {
                 id: Long
             ) {
                 if (array[position]=="Portero"){
-                    jugador.cod_Posicion = 1
+                    posicion = 1
                 }else if(array[position]=="Defensa"){
-                    jugador.cod_Posicion = 2
+                    posicion = 2
 
                 }else if (array[position]=="Mediocentro"){
-                    jugador.cod_Posicion = 3
+                    posicion = 3
 
                 }else if (array[position]=="Delantero"){
-                    jugador.cod_Posicion = 4
+                    posicion = 4
 
                 }
 

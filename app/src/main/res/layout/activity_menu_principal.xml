@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -18,15 +17,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+    <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="castellano/gallego"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/idioma"
+            android:layout_marginTop="75sp"
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+
     <!-- Título -->
     <TextView
             android:id="@+id/titulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Menú Principal"
+            android:text="@string/app_name"
             android:background="#5D34A5"
             android:textColor="@android:color/white"
-            android:textSize="15sp"
+            android:textSize="30sp"
             android:padding="10sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +70,7 @@
             android:id="@+id/btnLiga"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Clasificación de la Liga"
+            android:text="@string/clasificacionLiga"
             app:layout_constraintTop_toBottomOf="@id/titulo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +94,7 @@
             android:id="@+id/btnJugadores"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Buscar un Jugador"
+            android:text="@string/buscarJugador"
             app:layout_constraintTop_toBottomOf="@id/btnEquipos"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +118,7 @@
             android:id="@+id/btnCrearJugador"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="Crear un jugador"
+            android:text="@string/crearJugador"
             app:layout_constraintTop_toBottomOf="@id/btnCrearEquipo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

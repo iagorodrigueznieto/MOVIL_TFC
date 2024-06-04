@@ -14,15 +14,6 @@
             android:id="@+id/nombreJugador"
             android:hint="Nombre del Jugador"
             app:layout_constraintTop_toBottomOf="@+id/guideline12"/>
-    <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/guideline12"
-            android:layout_marginTop="240sp"
-            app:layout_constraintStart_toEndOf="@id/medio"
-            android:layout_marginLeft="-50sp"
-            android:id="@+id/SpinnerEquipo"
-            />
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

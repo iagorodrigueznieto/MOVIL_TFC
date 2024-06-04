@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pruebas_tfg.Adapter.BuscarEquiposAdapterLista
 import com.example.pruebas_tfg.Adapter.EquiposAdapterLiga
 import com.example.pruebas_tfg.Adapter.JugadorAdaptadorLista
+import com.example.pruebas_tfg.Adapter.ListaNormalEquiposAdapter
 import com.example.pruebas_tfg.Model.Equipo
 import com.example.pruebas_tfg.Model.Jugador
 import okhttp3.Call
@@ -83,7 +84,7 @@ class activity_buscar_equipos: AppCompatActivity() {
                                     )
                                 }
                                 runOnUiThread {
-                                    val adapter = BuscarEquiposAdapterLista(baseContext, jugadores)
+                                    val adapter = ListaNormalEquiposAdapter(baseContext, jugadores)
                                     lista.adapter = adapter
                                 }
                             }

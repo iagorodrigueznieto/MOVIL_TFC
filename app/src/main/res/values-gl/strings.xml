@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buscarJugador">Buscar un xogador</string>
+    <string name="clasificacionLiga">Clasificación da Liga</string>
+    <string name="crearJugador">Crear un xogador</string>
+</resources>

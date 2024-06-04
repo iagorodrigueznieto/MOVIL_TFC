@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">PRUEBAS_TFG</string>
+    <string name="app_name" translatable="false">F+</string>
+    <string name="buscarJugador">Buscar un Jugador</string>
+    <string name="clasificacionLiga">Clasificación de la Liga</string>
+    <string name="crearJugador">Crear un Jugador</string>
 </resources>

@@ -2,6 +2,9 @@ package com.example.pruebas_tfg
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.icu.util.ULocale.getLanguage
+import android.location.Location
+import android.location.LocationListener
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
@@ -9,6 +12,7 @@ import android.widget.ImageView
 import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.isVisible
 import com.example.pruebas_tfg.Model.User
 import java.io.File
@@ -29,9 +33,11 @@ class activity_menu_principal : AppCompatActivity() {
         var clasificacion = findViewById<Button>(R.id.btnLiga)
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
         val btnBuscarEntrenador = findViewById<Button>(R.id.BuscarEntrenador)
-        if (usuario != null) {
 
-        }
+        val swLang = findViewById<SwitchCompat>(R.id.idioma)
+
+
+
         if (usuario != null) {
 
             try {

@@ -51,7 +51,7 @@ class activity_login : AppCompatActivity() {
                                     "Usuario encontrado, entrando en la aplicación...",
                                     Toast.LENGTH_LONG
                                 ).show()
-                                var a = Intent(applicationContext, activity_menu_principal::class.java)
+                                var a = Intent(applicationContext, activity_Menu::class.java)
                                 a.putExtra("usuario",user)
                                 startActivity(a)
                             }

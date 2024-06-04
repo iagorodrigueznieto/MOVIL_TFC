@@ -28,6 +28,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity_Menu"
+            android:exported="false"/>
         <activity android:name=".activity_buscar_entrenador"
             android:exported="false"/>
         <activity android:name=".activity_crear_entrenador"

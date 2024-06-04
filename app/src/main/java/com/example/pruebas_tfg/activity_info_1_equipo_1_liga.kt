@@ -1,5 +1,6 @@
 package com.example.pruebas_tfg
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,6 +20,7 @@ import java.io.IOException
 
 class activity_info_1_equipo_1_liga : AppCompatActivity()
 {
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_info_1_equipo_en_1_liga)

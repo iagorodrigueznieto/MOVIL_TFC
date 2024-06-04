@@ -26,7 +26,7 @@ import java.io.IOException;
 
 public class activity_registrarse extends AppCompatActivity {
     private static final int CODIGO_ACTIVIDAD_SECUNDARIA = 1;
-    String ruta=null;
+    String ruta="";
 
     EditText login;
     EditText contrasenia;
@@ -50,7 +50,14 @@ public class activity_registrarse extends AppCompatActivity {
         registrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (contrasenia.getText().toString().isEmpty()||contraseña.getText().toString().isEmpty()||login.getText().toString().isEmpty()||mail.getText().toString().isEmpty()){
+                    Toast.makeText(getBaseContext(), "Por favor, rellene todos los campos", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(ruta.isEmpty()){
+                    Toast.makeText(getBaseContext(), "Por favor, seleccione una imagen", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 User user=new User(login.getText().toString(), mail.getText().toString(),contrasenia.getText().toString(),2, ruta);
                 Gson gson=new Gson();
                 String json=gson.toJson(user);

@@ -56,6 +56,7 @@ class activity_info_entrenador : AppCompatActivity() {
                                     runOnUiThread {
                                         Toast.makeText(this@activity_info_entrenador, "Entrenador Eliminado", Toast.LENGTH_SHORT).show()
                                     }
+                                    finish()
                                 }else{
                                     runOnUiThread {
                                         Toast.makeText(this@activity_info_entrenador, "Este entrenador está en un equipo. ", Toast.LENGTH_SHORT).show()
