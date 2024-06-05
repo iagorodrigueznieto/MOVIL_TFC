@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:textSize="20sp"
             android:layout_height="wrap_content"
-            android:text="Nombre: "
+            android:text="@string/nombre"
             app:layout_constraintEnd_toEndOf="@+id/vertical"
             app:layout_constraintTop_toBottomOf="@+id/horizontal2"
             />
@@ -69,7 +69,7 @@
 
             app:layout_constraintEnd_toEndOf="@+id/vertical"
             app:layout_constraintTop_toBottomOf="@+id/horizontal2"
-            android:text="Apellido: "/>
+            android:text="@string/apellidos"/>
 
 
     <TextView
@@ -79,14 +79,14 @@
             app:layout_constraintTop_toBottomOf="@+id/horizontal2"
             android:textSize="20sp"
             android:layout_marginTop="100sp"
-            android:text="Fecha de nacimiento: "/>
+            android:text="@string/fechaNacimiento"/>
 
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:text="Nacionalidad: "
+            android:text="@string/nacionalidad"
             android:layout_marginTop="150sp"
             app:layout_constraintEnd_toEndOf="@+id/vertical"
             app:layout_constraintTop_toBottomOf="@+id/horizontal2"

@@ -3,4 +3,19 @@
     <string name="buscarJugador">Buscar un xogador</string>
     <string name="clasificacionLiga">Clasificación da Liga</string>
     <string name="crearJugador">Crear un xogador</string>
+    <string name="tarjetasAmarillas">Tarxetas Amarelas</string>
+    <string name="tarjetasRojas">Tarxetas Vermellas</string>
+    <string name="nombreJugador">Nome do xogador</string>
+    <string name="modificarJugador">Modificar xogador</string>
+    <string name="agenteLibre">Axente Libre</string>
+    <string name="partidosGanados">Partidos Gañados</string>
+    <string name="partidosJugados">Partidos Xogados</string>
+    <string name="nombreEquipo">Nome do equipo</string>
+    <string name="ciudad">Ciudade</string>
+    <string name="fechaNacimiento">Fecha de nacemento</string>
+    <string name="buscarJugadores">Buscar xogadores</string>
+    <string name="nombre">Nome</string>
+    <string name="apellidos">Apelidos</string>
+    <string name="nacionalidad">Nacionalidad</string>
+    <string name="jugadoresEquipo">Ver xogadores do equipo</string>
 </resources>

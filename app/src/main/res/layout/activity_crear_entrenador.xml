@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40sp"
             app:layout_constraintStart_toStartOf="parent"
-            android:hint="Nombre"
+            android:hint="@string/nombre"
             android:id="@+id/nombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/horizontal"
@@ -32,13 +32,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/apellidos"
-            android:hint="Apellidos"
+            android:hint="@string/apellidos"
             app:layout_constraintTop_toBottomOf="@+id/horizontal"/>
 
     <EditText
             android:layout_width="240sp"
             android:layout_height="wrap_content"
-            android:hint="Nacionalidad"
+            android:hint="@string/nacionalidad"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="200sp"
             android:id="@+id/nacionalidad"
@@ -47,7 +47,7 @@
     <EditText
             android:layout_width="240sp"
             android:layout_height="wrap_content"
-            android:hint="Fecha de nacimiento"
+            android:hint="@string/fechaNacimiento"
             android:inputType="date"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="280sp"

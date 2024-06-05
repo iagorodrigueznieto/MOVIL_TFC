@@ -11,7 +11,7 @@
                 android:layout_height="wrap_content"
                 android:padding="10sp"
                 android:textSize="15sp"
-                android:text="Crear un equipo"
+                android:text="@string/crearJugador"
                 android:textColor="@color/white"
                 android:background="#673AB7"/>
 
@@ -21,7 +21,7 @@
                 android:id="@+id/nombreJugador"
                 android:layout_marginTop="50sp"
                 android:layout_marginLeft="50sp"
-                android:hint="Nombre del Jugador"/>
+                android:hint="@string/nombreJugador"/>
 
         <LinearLayout
                 android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tarjetas amarillas: " />
+                                android:text="@string/tarjetasAmarillas" />
 
                         <EditText
                                 android:layout_width="60sp"
@@ -44,7 +44,7 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Tarjetas Rojas"
+                                android:text="@string/tarjetasRojas"
                                 android:layout_marginLeft="10sp" />
 
                         <EditText
@@ -87,13 +87,6 @@
                                 android:inputType="number"
                                 android:id="@+id/asistencias"/>
                 </LinearLayout>
-
-        <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40sp"
-                android:layout_marginLeft="130sp"
-                android:id="@+id/spinnerEquipo"/>
 
     <Spinner
             android:layout_width="wrap_content"

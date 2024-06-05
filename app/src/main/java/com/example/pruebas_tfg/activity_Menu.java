@@ -40,10 +40,12 @@ public class activity_Menu extends AppCompatActivity {
             if (!(var18 instanceof User)) {
                 var18 = null;
             }
+
             SwitchCompat swLang = (SwitchCompat)this.findViewById(R.id.idioma);
+
             String savedLang = getSavedLanguage(this);
             changeLocale(getBaseContext(), savedLang);
-            swLang.setChecked(!"es".equals(savedLang));
+            swLang.setChecked("gl".equals(savedLang));
 
             swLang.setOnCheckedChangeListener((buttonView, isChecked) -> {
                 String newLang = isChecked ? "gl" : "es";
@@ -120,30 +122,23 @@ public class activity_Menu extends AppCompatActivity {
             }));
         }
 
-    private void changeLocale(Context context, String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-
-        Resources resources = context.getResources();
-        Configuration config = resources.getConfiguration();
-        config.setLocale(locale);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            context.createConfigurationContext(config);
-        } else {
-            resources.updateConfiguration(config, resources.getDisplayMetrics());
-        }
-
-        // Guarda el idioma seleccionado en las preferencias
-        SharedPreferences sharedPref = context.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("language", language);
+    private void saveLanguage(Context context, String lang) {
+        SharedPreferences prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("app_lang", lang);
         editor.apply();
     }
-
     private String getSavedLanguage(Context context) {
-        SharedPreferences sharedPref = context.getSharedPreferences("AppPreferences", Context.MODE_PRIVATE);
-        return sharedPref.getString("language", Locale.getDefault().getLanguage());
+        SharedPreferences prefs = context.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        return prefs.getString("app_lang", "es"); // "es" como valor predeterminado
+    }
+    private void changeLocale(Context context, String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
+        saveLanguage(context, lang);
     }
 
 

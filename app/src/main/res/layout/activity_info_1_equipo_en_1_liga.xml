@@ -135,7 +135,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partidos Jugados: "
+            android:text="@string/partidosJugados"
             android:layout_marginRight="10sp"
             android:layout_marginTop="60sp"
             android:textSize="17sp"
@@ -145,7 +145,7 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partidos Ganados: "
+            android:text="@string/partidosGanados"
             android:layout_marginRight="10sp"
             android:layout_marginTop="110sp"
             android:textSize="17sp"

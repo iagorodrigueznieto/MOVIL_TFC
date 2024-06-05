@@ -12,19 +12,19 @@
             app:layout_constraintEnd_toEndOf="@id/guideline3"
             app:layout_constraintStart_toStartOf="@id/guideline2"
             android:id="@+id/nombreJugador"
-            android:hint="Nombre del Jugador"
+            android:hint="@string/nombreJugador"
             app:layout_constraintTop_toBottomOf="@+id/guideline12"/>
+
+
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Modificar el jugador"
+            android:text="@string/modificarJugador"
             android:id="@+id/btnmodificarJugador"
             app:layout_constraintStart_toEndOf="@id/medio"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
-            android:layout_marginTop="280sp"
-            android:layout_marginLeft="-85sp"/>
-
-
+            android:layout_marginTop="276dp"
+            android:layout_marginLeft="-85sp" />
 
     <EditText
             android:layout_width="50sp"
@@ -70,14 +70,14 @@
             android:layout_marginTop="160sp"
             android:layout_marginRight="60sp"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
-            android:text="Tarjetas Amarillas:"/>
+            android:text="@string/tarjetasAmarillas"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/medio"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
             android:layout_marginTop="160sp"
-            android:text="Tarjetas Rojas:"/>
+            android:text="@string/tarjetasRojas"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
     <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Agente Libre"
+            android:text="@string/agenteLibre"
             app:layout_constraintStart_toStartOf="@id/medio"
             app:layout_constraintTop_toBottomOf="@id/guideline12"
             android:layout_marginTop="180sp"

@@ -2,21 +2,18 @@ package com.example.pruebas_tfg
 
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.icu.util.ULocale.getLanguage
-import android.location.Location
-import android.location.LocationListener
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Switch
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.view.isVisible
+import com.example.pruebas_tfg.LocaleHelper.LocaleHelper
 import com.example.pruebas_tfg.Model.User
 import java.io.File
 import java.io.FileInputStream
+
 
 class activity_menu_principal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +31,26 @@ class activity_menu_principal : AppCompatActivity() {
         val crearEquipo= findViewById<Button>(R.id.btnCrearEquipo)
         val btnBuscarEntrenador = findViewById<Button>(R.id.BuscarEntrenador)
 
-        val swLang = findViewById<SwitchCompat>(R.id.idioma)
+        val languageSwitch = findViewById<SwitchCompat>(R.id.idioma)
+        languageSwitch.isChecked = false
 
-
+//        val language = LocaleHelper.getPersistedData(this, "es")
+//        if (language == "gl") {
+//            languageSwitch.isChecked = true
+//        } else {
+//            languageSwitch.isChecked = false
+//        }
+//
+//        languageSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+//            if (isChecked) {
+//                // Change to Galician
+//                LocaleHelper.setLocale(baseContext, "gl")
+//            } else {
+//                // Change to Spanish
+//                LocaleHelper.setLocale(baseContext, "es")
+//            }
+//            recreate() // Recreate activity to apply changes
+//        }
 
         if (usuario != null) {
 

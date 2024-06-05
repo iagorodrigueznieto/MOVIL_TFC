@@ -17,7 +17,7 @@
     <EditText
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
+            android:hint="@string/nombre"
             android:id="@+id/nombre"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,7 @@
     <EditText
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Apellidos"
+            android:hint="@string/apellidos"
             android:id="@+id/apellidos"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
     <EditText
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Nacionalidad"
+            android:hint="@string/nacionalidad"
             android:id="@+id/nacionalidad"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
     <EditText
             android:layout_width="200sp"
             android:layout_height="wrap_content"
-            android:hint="Fecha de nacimiento"
+            android:hint="@string/fechaNacimiento"
             android:id="@+id/fechaDeNacimiento"
             android:inputType="date"
             app:layout_constraintStart_toStartOf="parent"
