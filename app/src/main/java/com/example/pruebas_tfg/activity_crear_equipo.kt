@@ -41,7 +41,7 @@ class activity_crear_equipo : AppCompatActivity() {
         btnCrearEntrenador.isVisible = false
         btnCrearEntrenador.isClickable = false
 
-        val request = Request.Builder().url("http://192.168.2.211:8080/entrenadores/libres").build()
+        val request = Request.Builder().url("https://proyecyotfc.zeabur.app/entrenadores/libres").build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -105,7 +105,7 @@ class activity_crear_equipo : AppCompatActivity() {
                 val json = gson.toJson(equipo)
 
 
-                val url = "http://192.168.2.211:8080/equipos"
+                val url = "https://proyecyotfc.zeabur.app/equipos"
 
                 val mediatype = "application/json; charset=utf-8".toMediaTypeOrNull()
                 val body = RequestBody.create(mediatype, json)
@@ -125,7 +125,7 @@ class activity_crear_equipo : AppCompatActivity() {
                                     Toast.LENGTH_LONG
                                 ).show()
                                 val request = Request.Builder()
-                                    .url("http://192.168.2.211:8080/entrenadores/libres").build()
+                                    .url("https://proyecyotfc.zeabur.app/entrenadores/libres").build()
 
                                 client.newCall(request).enqueue(object : Callback {
                                     override fun onFailure(call: Call, e: IOException) {

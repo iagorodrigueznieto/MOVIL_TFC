@@ -39,7 +39,7 @@ class activity_info_1_equipo_1_liga : AppCompatActivity()
         nombreEquipo.text = equipo.nombreEquipo
         val nombreLiga =findViewById<TextView>(R.id.nombreLiga)
         nombreLiga.text = liga.nombre
-        val url = "http://192.168.2.211:8080/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
+        val url = "https://proyecyotfc.zeabur.app/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
         val request = okhttp3.Request.Builder().url(url).build()
         val request2 = okhttp3.Request.Builder()
 
@@ -66,7 +66,7 @@ class activity_info_1_equipo_1_liga : AppCompatActivity()
 
     val btnEliminar = findViewById<Button>(R.id.btnEliminar)
         btnEliminar.setOnClickListener{
-            val url2 = "http://192.168.2.211:8080/liga/eliminar?codEquipo=${equipo.idEquipo}&codLiga=${liga.codLiga}"
+            val url2 = "https://proyecyotfc.zeabur.app/liga/eliminar?codEquipo=${equipo.idEquipo}&codLiga=${liga.codLiga}"
             client.newCall(request2.url(url2).delete().build()).enqueue(object : Callback{
                 override fun onFailure(call: Call, e: IOException) {
 

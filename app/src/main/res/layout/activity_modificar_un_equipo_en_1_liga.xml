@@ -47,36 +47,8 @@
             app:layout_goneMarginLeft="75sp"
             android:textStyle="italic" />
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Puntos: "
-            android:layout_marginRight="10sp"
-            android:textSize="17sp"
-            app:layout_constraintEnd_toStartOf="@id/medio"
-            app:layout_constraintTop_toBottomOf="@id/horizonatalInfo" />
 
-    <EditText
-            android:layout_width="80sp"
-            android:layout_height="wrap_content"
-            android:id="@+id/puntos"
-            android:inputType="number"
-            android:layout_marginTop="-10sp"
-            android:textSize="15sp"
-            android:layout_marginLeft="10sp"
-            app:layout_constraintTop_toBottomOf="@id/horizonatalInfo"
-            app:layout_constraintStart_toStartOf="@id/medio" />
 
-    <EditText
-            android:layout_width="80sp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:id="@+id/partidosJugados"
-            android:textSize="15sp"
-            android:layout_marginTop="50sp"
-            android:layout_marginLeft="10sp"
-            app:layout_constraintTop_toBottomOf="@id/horizonatalInfo"
-            app:layout_constraintStart_toStartOf="@id/medio" />
 
     <EditText
             android:layout_width="80sp"
@@ -132,16 +104,6 @@
             android:layout_marginLeft="10sp"
             app:layout_constraintTop_toBottomOf="@id/horizonatalInfo"
             app:layout_constraintStart_toStartOf="@id/medio" />
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/partidosJugados"
-            android:layout_marginRight="10sp"
-            android:layout_marginTop="60sp"
-            android:textSize="17sp"
-            app:layout_constraintEnd_toStartOf="@id/medio"
-            app:layout_constraintTop_toBottomOf="@id/horizonatalInfo" />
 
     <TextView
             android:layout_width="wrap_content"

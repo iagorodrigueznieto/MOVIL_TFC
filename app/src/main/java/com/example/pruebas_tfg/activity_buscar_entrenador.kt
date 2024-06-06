@@ -40,7 +40,7 @@ class activity_buscar_entrenador : AppCompatActivity () {
 
             override fun afterTextChanged(s: Editable?) {
                 val buscar = editText.text.toString()
-                val request2 = Request.Builder().url("http://192.168.2.211:8080/entrenadores/nombre?nombre=$buscar").build()
+                val request2 = Request.Builder().url("https://proyecyotfc.zeabur.app/entrenadores/nombre?nombre=$buscar").build()
                 client.newCall(request2).enqueue(object : Callback{
                     override fun onFailure(call: Call, e: IOException) {
 

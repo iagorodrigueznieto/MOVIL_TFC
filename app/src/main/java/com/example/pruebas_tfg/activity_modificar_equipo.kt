@@ -70,7 +70,7 @@ class activity_modificar_equipo : AppCompatActivity() {
                 val requestBody =json.toRequestBody("application/json".toMediaTypeOrNull())
 
                 val request = Request.Builder()
-                    .url("http://192.168.2.211:8080/equipos")
+                    .url("https://proyecyotfc.zeabur.app/equipos")
                     .put(requestBody)
                     .build()
                 client.newCall(request).enqueue(object  : Callback{

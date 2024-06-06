@@ -28,7 +28,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
         var seleccion : String
         val equipo = intent.getSerializableExtra("equipo") as Equipo
 
-        val requestAdapter = Request.Builder().url("http://192.168.2.211:8080/jugadores/equipo?codEquipo=${equipo.idEquipo}").build()
+        val requestAdapter = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/equipo?codEquipo=${equipo.idEquipo}").build()
 
         client.newCall(requestAdapter).enqueue(object : Callback{
             override fun onFailure(call: Call, e: IOException) {
@@ -59,7 +59,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
             override fun onItemSelected(parent: AdapterView<*>?, view: android.view.View?, position: Int, id: Long) {
                 seleccion = array[position]
                 if(seleccion.equals("Portero")){
-                    val requestPosicion = Request.Builder().url("http://192.168.2.211:8080/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=1").build()
+                    val requestPosicion = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=1").build()
                     client.newCall(requestPosicion).enqueue(object : Callback{
                         override fun onFailure(call: Call, e: IOException) {
 
@@ -76,7 +76,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
                         }
                     })
                 }else if(seleccion.equals("Defensa")){
-                    val requestPosicion = Request.Builder().url("http://192.168.2.211:8080/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=2").build()
+                    val requestPosicion = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=2").build()
                     client.newCall(requestPosicion).enqueue(object : Callback{
                         override fun onFailure(call: Call, e: IOException) {
 
@@ -94,7 +94,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
                     })
 
                 }else if(seleccion.equals("Mediocentro")){
-                    val requestPosicion = Request.Builder().url("http://192.168.2.211:8080/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=3").build()
+                    val requestPosicion = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=3").build()
                     client.newCall(requestPosicion).enqueue(object : Callback{
                         override fun onFailure(call: Call, e: IOException) {
 
@@ -111,7 +111,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
                         }
                     })
                 }else if (seleccion.equals("Delantero")){
-                    val requestPosicion = Request.Builder().url("http://192.168.2.211:8080/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=4").build()
+                    val requestPosicion = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/posicion?codEquipo=${equipo.idEquipo}&posicion=4").build()
                     client.newCall(requestPosicion).enqueue(object : Callback{
                         override fun onFailure(call: Call, e: IOException) {
 
@@ -128,7 +128,7 @@ class activity_ver_jugadores_de_un_equipo : AppCompatActivity() {
                         }
                     })
                 }else{
-                    val requestAdapter = Request.Builder().url("http://192.168.2.211:8080/jugadores/equipo?codEquipo=${equipo.idEquipo}").build()
+                    val requestAdapter = Request.Builder().url("https://proyecyotfc.zeabur.app/jugadores/equipo?codEquipo=${equipo.idEquipo}").build()
 
                     client.newCall(requestAdapter).enqueue(object : Callback{
                         override fun onFailure(call: Call, e: IOException) {

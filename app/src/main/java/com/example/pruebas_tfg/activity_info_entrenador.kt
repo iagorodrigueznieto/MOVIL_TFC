@@ -39,7 +39,7 @@ class activity_info_entrenador : AppCompatActivity() {
         val eliminar = findViewById<Button>(R.id.btnEliminar)
         eliminar.setOnClickListener{
           var entrenadoresLibres: List<Entrenador> = ArrayList()
-          val request= Request.Builder().url("http://192.168.2.211:8080/entrenadores/libres").build()
+          val request= Request.Builder().url("https://proyecyotfc.zeabur.app/entrenadores/libres").build()
             client.newCall(request).enqueue(object : Callback{
                 override fun onFailure(call: Call, e: IOException) {
 
@@ -49,7 +49,7 @@ class activity_info_entrenador : AppCompatActivity() {
 
                     val json = response.body?.string()
                     entrenadoresLibres = Gson().fromJson(json, Array<Entrenador>::class.java).toList()
-                        val request2 = Request.Builder().url("http://192.168.2.211:8080/entrenadores?id=${entrenador.idEntrenador}").delete().build()
+                        val request2 = Request.Builder().url("https://proyecyotfc.zeabur.app/entrenadores?id=${entrenador.idEntrenador}").delete().build()
                         client.newCall(request2).enqueue(object : Callback{
                             override fun onResponse(call: Call, response: Response) {
                                 if(response.code==200){

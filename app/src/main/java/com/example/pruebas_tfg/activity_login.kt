@@ -27,7 +27,7 @@ class activity_login : AppCompatActivity() {
                 Toast.makeText(this, "No se puede dejar ningún campo vacío.", Toast.LENGTH_LONG).show()
             } else {
                 val request = Request.Builder()
-                    .url("http://192.168.2.211:8080/usuarios/login?login=" + input_usuario.text.toString() + "&password=" + input_contraseña.text.toString())
+                    .url("https://proyecyotfc.zeabur.app/usuarios/login?login=" + input_usuario.text.toString() + "&password=" + input_contraseña.text.toString())
                     .build()
                 client.newCall(request).enqueue(object : Callback {
                     override fun onFailure(call: Call, e: IOException) {

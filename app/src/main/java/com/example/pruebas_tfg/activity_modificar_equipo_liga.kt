@@ -28,8 +28,6 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
         val nombre = findViewById<TextView>(R.id.nombreEquipo)
         nombre.setText(equipo.nombreEquipo)
         val client = okhttp3.OkHttpClient()
-        val puntos = findViewById<EditText>(R.id.puntos)
-        val partidosJugados = findViewById<EditText>(R.id.partidosJugados)
         val partidosGanados = findViewById<EditText>(R.id.partidosGanados)
         val partidosEmpatados = findViewById<EditText>(R.id.partidosEmpatados)
         val partidosPerdidos = findViewById<EditText>(R.id.partidosPerdidos)
@@ -38,7 +36,7 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
         val nombreLiga = findViewById<TextView>(R.id.nombreLiga)
         nombreLiga.setText(liga.nombre)
         val url =
-            "http://192.168.2.211:8080/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
+            "https://proyecyotfc.zeabur.app/equipos/info?codLiga=${liga.codLiga}&codEquipo=${equipo.idEquipo}"
         val request = okhttp3.Request.Builder().url(url).build()
         val request2 = okhttp3.Request.Builder()
 
@@ -51,8 +49,6 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
                 val gson = Gson()
                 val equipo2 = gson.fromJson(body, InfoEquipoEn1LigaOutputDto::class.java)
                 runOnUiThread {
-                    puntos.setText(equipo2.puntos.toString())
-                    partidosJugados.setText(equipo2.partidosJugados.toString())
                     partidosGanados.setText(equipo2.partidosGanados.toString())
                     partidosEmpatados.setText(equipo2.partidosEmpatados.toString())
                     partidosPerdidos.setText(equipo2.partidosPerdidos.toString())
@@ -64,8 +60,7 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
 
         val btnGuardar = findViewById<Button>(R.id.btnModificar)
         btnGuardar.setOnClickListener {
-            if (puntos.text.toString().isEmpty() || partidosJugados.text.toString()
-                    .isEmpty() || partidosGanados.text.toString()
+            if (partidosGanados.text.toString()
                     .isEmpty() || partidosEmpatados.text.toString()
                     .isEmpty() || partidosPerdidos.text.toString()
                     .isEmpty() || golesAFavor.text.toString().isEmpty()
@@ -75,14 +70,17 @@ class activity_modificar_equipo_liga : AppCompatActivity() {
                     "Rellene todos los campos",
                     Toast.LENGTH_SHORT
                 ).show()
-            } else {
-                val url = "http://192.168.2.211:8080/liga/info"
+            }
+            else {
+                val puntos = (partidosEmpatados.text.toString().toInt() * 1 + partidosGanados.text.toString().toInt() * 3)
+                val partidosJugados = partidosPerdidos.text.toString().toInt() + partidosEmpatados.text.toString().toInt() + partidosGanados.text.toString().toInt()
+                val url = "https://proyecyotfc.zeabur.app/liga/info"
                 val json = Gson().toJson(
                     InfoEquipoEn1LigaOutputDto(
                         equipo.idEquipo.toInt(),
                         liga.codLiga.toInt(),
-                        puntos.text.toString().toInt(),
-                        partidosJugados.text.toString().toInt(),
+                        puntos,
+                        partidosJugados,
                         partidosGanados.text.toString().toInt(),
                         partidosEmpatados.text.toString().toInt(),
                         partidosPerdidos.text.toString().toInt(),

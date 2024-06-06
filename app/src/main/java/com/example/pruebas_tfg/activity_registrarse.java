@@ -61,7 +61,7 @@ public class activity_registrarse extends AppCompatActivity {
                 User user=new User(login.getText().toString(), mail.getText().toString(),contrasenia.getText().toString(),2, ruta);
                 Gson gson=new Gson();
                 String json=gson.toJson(user);
-                String url="http://192.168.2.211:8080/usuarios";
+                String url="https://proyecyotfc.zeabur.app/usuarios";
                 MediaType mediaType=MediaType.parse("application/json; charset=utf-8");
                 RequestBody body=RequestBody.create(json, mediaType);
                 Request request=new Request.Builder().url(url).post(body).build();

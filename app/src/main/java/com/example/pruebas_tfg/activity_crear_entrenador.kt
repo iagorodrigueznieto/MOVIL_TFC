@@ -44,7 +44,7 @@ class activity_crear_entrenador : AppCompatActivity() {
                     val json = Gson().toJson(entrenador)
                     val mediaType = "application/json; charset=utf-8".toMediaTypeOrNull()
                     val body = RequestBody.create(mediaType, json)
-                   val request = Request.Builder().url("http://192.168.2.211:8080/entrenadores").post(body).build()
+                   val request = Request.Builder().url("https://proyecyotfc.zeabur.app/entrenadores").post(body).build()
                     client.newCall(request).enqueue(object : Callback{
                         override fun onFailure(call: okhttp3.Call, e: java.io.IOException) {
                             Toast.makeText(this@activity_crear_entrenador, "Error", Toast.LENGTH_SHORT).show()

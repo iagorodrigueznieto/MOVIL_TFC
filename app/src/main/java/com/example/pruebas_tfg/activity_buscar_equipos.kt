@@ -49,7 +49,7 @@ class activity_buscar_equipos: AppCompatActivity() {
                 val buscar2 = buscar.text.toString()
 
                 val request = Request.Builder()
-                    .url("http://192.168.2.211:8080/equipos/nombre?nombre=$buscar2")
+                    .url("https://proyecyotfc.zeabur.app/equipos/nombre?nombre=$buscar2")
                     .build()
 
                 client.newCall(request).enqueue(object : Callback {

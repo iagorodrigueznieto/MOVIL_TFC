@@ -21,7 +21,7 @@ class activity_ver_ligas : AppCompatActivity() {
         setContentView(R.layout.activity_ligas)
         val lista = findViewById<ListView>(R.id.listaJugadores)
         val client = OkHttpClient()
-        val request= Request.Builder().url("http://192.168.2.211:8080/liga").build()
+        val request= Request.Builder().url("https://proyecyotfc.zeabur.app/liga").build()
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("Error al realizar la solicitud", e.message!!)

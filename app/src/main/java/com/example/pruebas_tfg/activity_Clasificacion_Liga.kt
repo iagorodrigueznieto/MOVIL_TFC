@@ -27,7 +27,7 @@ class activity_Clasificacion_Liga : AppCompatActivity() {
         if (liga != null) {
             nombreLiga.setText(liga.nombre)
             val request = Request.Builder()
-                .url("http://192.168.2.211:8080/equipos/clasificacion?codLiga=" + (liga.codLiga))
+                .url("https://proyecyotfc.zeabur.app/equipos/clasificacion?codLiga=" + (liga.codLiga))
                 .build()
             client.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {

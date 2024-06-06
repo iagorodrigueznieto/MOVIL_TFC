@@ -63,7 +63,7 @@ class activity_modificar_jugador : AppCompatActivity() {
                 val json = Gson().toJson(jugador)
                 val requestBody = json.toRequestBody("application/json".toMediaTypeOrNull())
                 val request = okhttp3.Request.Builder()
-                    .url("http://192.168.2.211:8080/jugadores")
+                    .url("https://proyecyotfc.zeabur.app/jugadores")
                     .put(requestBody)
                     .build()
 

@@ -43,7 +43,7 @@ class activity_info_equipo : AppCompatActivity() {
         }
 
         val request = Request.Builder()
-            .url("http://192.168.2.211:8080/entrenadores/entrenador?id=${equipoAverInfo.idEntrenador}").build()
+            .url("https://proyecyotfc.zeabur.app/entrenadores/entrenador?id=${equipoAverInfo.idEntrenador}").build()
 
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
@@ -91,7 +91,7 @@ class activity_info_equipo : AppCompatActivity() {
 
         btnEliminar.setOnClickListener {
                 val request = Request.Builder()
-                    .url("http://192.168.2.211:8080/equipos?id=${equipoAverInfo.idEquipo}")
+                    .url("https://proyecyotfc.zeabur.app/equipos?id=${equipoAverInfo.idEquipo}")
                     .delete()
                     .build()
             client.newCall(request).enqueue(object : Callback {

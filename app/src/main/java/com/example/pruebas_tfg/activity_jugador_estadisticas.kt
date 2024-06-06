@@ -58,7 +58,7 @@ class activity_jugador_estadisticas : AppCompatActivity() {
         btnEliminar.setOnClickListener {
 
 
-            val url = "http://192.168.2.211:8080/jugadores?id=${jugador.id_jugador}"
+            val url = "https://proyecyotfc.zeabur.app/jugadores?id=${jugador.id_jugador}"
             var mediaType  = "application/json; charset=utf-8".toMediaTypeOrNull()
             val request=Request.Builder().url(url).delete().build()
             client.newCall(request).enqueue(object : Callback{
